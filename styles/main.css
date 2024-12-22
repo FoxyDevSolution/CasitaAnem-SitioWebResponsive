@@ -1,0 +1,38 @@
+/*? Sobreescritura box-sizing bootstrap*/
+.selector-for-some-widget {
+    box-sizing: content-box;
+  }
+
+
+  /* Ajustes para el carrusel en móvil */
+.carousel-item {
+  text-align: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+/* Espaciado entre columnas en desktop */
+@media (min-width: 768px) {
+  .row.d-md-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem; /* Espaciado entre formulario y lista */
+  }
+
+  .col-md-6 {
+    flex: 1;
+  }
+}
+
+/* Botón primario personalizado */
+.btn-primary {
+  background-color: #6f4e37; /* Marrón cálido */
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #543a28;
+}

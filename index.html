@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casita Anem</title>
+  <!--!Link bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!--!Link Cs-->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<!--TODO: Definir dónde irá el logo-->
+<body>
+  <!--* Header: Título, logo y el botón principal. -->
+  <!--TODO: redireccionar cuando se aprete el boton a la section 1-->
+  <header class="text-center py-5">
+    <h2>DINA HUAPI - RIO NEGRO</h2>
+    <h1>Casita Anem</h1>
+    <p>Tu refugio en la Patagonia</p>
+    <button class="btn btn-primary">¡Conocenos!</button>
+  </header>
+
+  <!--* Section 1: Rincón Patagónico -->
+  <!--TODO: Cargar las fotos de Dina Huapi-->
+  <section class="py-5">
+    <div class="container text-center">
+  
+      <!-- Versión mobile: Carrusel -->
+      <div class="d-block d-md-none">
+        <h2>Conocé este hermoso rincón Patagónico</h2>
+  
+        <!-- Carrusel de Bootstrap -->
+        <div id="carouselFotos" class="carousel slide mt-4" data-bs-ride="carousel">
+          <!-- Indicadores opcionales -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselFotos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Imagen 1"></button>
+            <button type="button" data-bs-target="#carouselFotos" data-bs-slide-to="1" aria-label="Imagen 2"></button>
+            <button type="button" data-bs-target="#carouselFotos" data-bs-slide-to="2" aria-label="Imagen 3"></button>
+          </div>
+  
+          <!-- Imágenes del carrusel -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/images/image1.jpg" class="d-block w-100 rounded" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/image2.jpg" class="d-block w-100 rounded" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/image3.jpg" class="d-block w-100 rounded" alt="Imagen 3">
+            </div>
+          </div>
+  
+          <!-- Controles del carrusel -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselFotos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselFotos" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+  
+        <!-- Párrafo simplificado -->
+        <p class="mt-4">Te invitamos a disfrutar de la tranquilidad y belleza de Dina Huapi</p>
+      </div>
+  
+      <!-- Versión desktop: Imágenes estáticas -->
+      <div class="d-none d-md-block">
+        <h2>Conocé este hermoso rincón Patagónico</h2>
+  
+        <!-- Imágenes estáticas en desktop -->
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <img src="assets/images/image1.jpg" alt="Imagen 1" class="img-fluid rounded-circle">
+          </div>
+          <div class="col-md-4">
+            <img src="assets/images/image2.jpg" alt="Imagen 2" class="img-fluid rounded-circle">
+          </div>
+          <div class="col-md-4">
+            <img src="assets/images/image3.jpg" alt="Imagen 3" class="img-fluid rounded-circle">
+          </div>
+        </div>
+  
+        <!-- Párrafo completo en desktop -->
+        <p class="mt-4">Nuestra casa se encuentra ubicada en un entorno natural incomparable, para unas vacaciones inolvidables. <br> Te invitamos a disfrutar de la tranquilidad y belleza de Dina Huapi</p>
+      </div>
+  
+    </div>
+  </section>
+  
+  <!--! section 1 Version only desktop
+  <section class="py-5">
+    <div class="container text-center">
+      <h2>Conocé este hermoso rincón Patagónico</h2>
+
+      <div class="row">
+        <div class="col-md-4">
+          <img src="assets/images/image1.jpg" alt="Imagen 1" class="img-fluid rounded-circle">
+        </div>
+        <div class="col-md-4">
+          <img src="assets/images/image2.jpg" alt="Imagen 2" class="img-fluid rounded-circle">
+        </div>
+        <div class="col-md-4">
+          <img src="assets/images/image3.jpg" alt="Imagen 3" class="img-fluid rounded-circle">
+        </div>
+      </div>
+      <p>Nuestra casa se encuentra ubicada en un entorno natural incomparable, para unas vacaciones inolvidables. <br> Te invitamos a disfrutar de la tranquilidad y bellleza de Dina Huapi</p>
+    </div>
+  </section>
+-->
+
+  <!--* Section 2: Nuestra Casa -->
+  <!--TODO: Cargar fotos de la casa -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Nuestra Casa</h2>
+  
+      <!-- Versión Desktop -->
+      <div class="row text-center d-none d-md-flex">
+        <div class="col-md-3">
+          <img src="assets/images/feature1.jpg" alt="Comodidad" class="img-fluid">
+          <p>2 habitaciones:<br>1 habitación con 4 camas individuales<br>1 habitación con 1 cama matrimonial</p>
+        </div>
+        <div class="col-md-3">
+          <img src="assets/images/feature2.jpg" alt="Baño privado" class="img-fluid">
+          <p>1 baño privado</p>
+        </div>
+        <div class="col-md-3">
+          <img src="assets/images/feature3.jpg" alt="Cocina equipada" class="img-fluid">
+          <p>Cocina totalmente equipada</p>
+        </div>
+        <div class="col-md-3">
+          <img src="assets/images/feature4.jpg" alt="patio estacionamiento" class="img-fluid">
+          <p>Patio privado con posibilidad de estacionar su vehículo al aire libre.</p>
+        </div>
+      </div>
+  
+      <!-- Versión Mobile -->
+      <div id="casaCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active text-center">
+            <img src="assets/images/feature1.jpg" alt="Comodidad" class="img-fluid">
+            <p class="mt-3">2 habitaciones:<br>1 habitación con 4 camas individuales<br>1 habitación con 1 cama matrimonial</p>
+          </div>
+          <div class="carousel-item text-center">
+            <img src="assets/images/feature2.jpg" alt="Baño privado" class="img-fluid">
+            <p class="mt-3">1 baño privado</p>
+          </div>
+          <div class="carousel-item text-center">
+            <img src="assets/images/feature3.jpg" alt="Cocina equipada" class="img-fluid">
+            <p class="mt-3">Cocina totalmente equipada</p>
+          </div>
+          <div class="carousel-item text-center">
+            <img src="assets/images/feature4.jpg" alt="Patio estacionamiento" class="img-fluid">
+            <p class="mt-3">Patio privado con posibilidad de estacionar su vehículo al aire libre.</p>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#casaCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#casaCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  
+      <!-- Iconos de Equipamiento -->
+      <div class="text-center mt-4">
+        <img src="assets/icons/bed.svg" alt="Cama" class="icon">
+        <img src="assets/icons/bathroom.svg" alt="Baño" class="icon">
+        <img src="assets/icons/kitchen.svg" alt="Cocina" class="icon">
+        <img src="assets/icons/car.svg" alt="Estacionamiento" class="icon">
+      </div>
+    </div>
+  </section>
+  
+  <!--! Section 2 Version only desktop
+  <section class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center">Nuestra Casa</h2>
+      <div class="row text-center">
+        <div class="col-md-3">
+          <img src="assets/images/feature1.jpg" alt="Comodidad" class="img-fluid">
+          <p>2 habitaciones:<br>1 habitación con 4 camas individuales<br>1 habitación con 1 cama matrimonial</p>
+        </div>
+        <div class="col-md-3">
+          <img src="assets/images/feature2.jpg" alt="Baño privado" class="img-fluid">
+          <p>1 baño privado</p>
+        </div>
+        <div class="col-md-3">
+          <img src="assets/images/feature3.jpg" alt="Cocina equipada" class="img-fluid">
+          <p>Cocina totalmente equipada</p>
+        </div>
+        <div class="col-md-3">
+          <img src="assets/images/feature4.jpg" alt="patio estacionamiento" class="img-fluid">
+          <p>Patio privado con posibilidad de estacionar su vehículo al aire libre.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+-->
+
+<!--* Section 3: Dónde estamos -->
+  <!--TODO: Cargar maps de la casa -->
+  <section class="py-5">
+    <div class="container text-center">
+      <h2>¿Dónde estamos?</h2>
+      <p>Con vehículo podés llegar en...</p>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <ul>
+            <li>4 minutos del Cerro Leones</li>
+            <li>8 minutos de la costa del lago Nahuel Huapi</li>
+            <li>22 minutos del aeropuerto</li>
+            <li>25 minutos del Centro Civico de Bariloche</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAPS_EMBED_URL"
+                    class="embed-responsive-item"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--* Section 4: Sobre nosotros -->
+  <!--TODO: mostrar 3 comentarios cargados en el libro de huspedes-->
+  <section class="bg-light py-5" id="sobre-nosotros">
+    <div class="container">
+      <h2 class="text-center mb-4">Sobre nosotros</h2>
+  
+      <!--? Contenido común para ambas versiones -->
+      <p class="text-center">
+        Somos una familia nacida y criada en Bariloche, rodeados de lagos y montañas. <br>
+        Amamos la naturaleza y nuestra tierra, y queremos compartir nuestro hogar con nuestros huéspedes. <br>
+        Buscamos que su estadía sea inolvidable y que sientan la magia de la Patagonia. <br>
+        Nos esforzamos para que se sientan cómodos y bienvenidos.
+      </p>
+  
+      <!--* Botón para móvil que enlaza a la sección 5 -->
+      <div class="text-center d-md-none mt-4">
+        <a href="#experiencias-huespedes" class="btn btn-primary">Nuestros Huéspedes</a>
+      </div>
+  
+      <!--! Versión Desktop -->
+      <div class="row d-none d-md-flex mt-4">
+        <div class="col-md-12 text-center">
+          <p>Aquí le compartimos algunas reseñas:</p>
+        </div>
+  
+        <!--! Reseñas -->
+        <div class="col-md-4 mb-4">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
+          <p><strong>Primer nombre</strong></p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
+          <p><strong>Segundo nombre</strong></p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
+          <p><strong>Tercer nombre</strong></p>
+        </div>
+  
+        <!--? Botón para dejar opinión -->
+        <div class="text-center mt-4">
+          <button class="btn btn-primary">Deja tu opinión</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!--! Section 4 Vestion only desktop
+  <section class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center">Sobre nosotros</h2>
+      <p>Somos una familia nacida y criada en Bariloche, rodeados de lagos y montañas. <br>
+        Amamos la naturaleza y nuestra tierra, y queremos compartir nuestro hogar con nuestros huéspedes. <br>
+        Buscamos que su estadía sea inolvidable y que sientan la magia de la Patagonia.
+        Nos esforzamos para que se sientan cómodos y bienvenidos. <br>
+        Aquí le compartimos algunas reseñas:
+      </p>
+  
+    
+      <div class="row">
+     
+        <div class="col-md-4 mb-4">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
+          <p><strong>Primer nombre</strong></p>
+        </div>
+  
+
+        <div class="col-md-4 mb-4">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
+          <p><strong>Segundo nombre</strong></p>
+        </div>
+  
+
+        <div class="col-md-4 mb-4">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
+          <p><strong>Tercer nombre</strong></p>
+        </div>
+      </div>
+  
+
+      <div class="text-center mt-4">
+        <button class="btn btn-primary">Deja tu opinión</button>
+      </div>
+    </div>
+  </section>
+-->
+
+
+
+ <!--* Section 5: Experiencias huespedes -->
+ <!--TODO: Desarrollar el algoritmo para captar el comentario de formulario y mostrarlo en la lista de comentarios-->
+ <section class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Experiencias de nuestros visitantes</h2>
+
+    <!-- Versión móvil: Carrusel de comentarios -->
+    <div id="carouselComentarios" class="carousel slide d-md-none mb-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Comentario 1 -->
+        <div class="carousel-item active">
+          <div class="card p-3">
+            <strong>Juan Pérez</strong>
+            <p>¡Estuvimos de maravilla! La vista desde la casa es increíble. Volveremos sin duda.</p>
+          </div>
+        </div>
+        <!-- Comentario 2 -->
+        <div class="carousel-item">
+          <div class="card p-3">
+            <strong>Maria Gómez</strong>
+            <p>Un lugar hermoso para desconectar. Todo muy limpio y cómodo. Altamente recomendado.</p>
+          </div>
+        </div>
+        <!-- Más comentarios se pueden agregar aquí -->
+      </div>
+      <!-- Controles del carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselComentarios" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselComentarios" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+
+    <!-- Formulario para versión móvil -->
+    <div class="d-md-none">
+      <h3>Dejanos tu experiencia</h3>
+      <form id="form-comentario-mobile">
+        <!-- Campo para nombre y apellido -->
+        <div class="mb-3">
+          <label for="nombre-apellido-huesped-mobile" class="form-label">Nombre y Apellido</label>
+          <input type="text" class="form-control" id="nombre-apellido-huesped-mobile" required placeholder="Tu nombre">
+        </div>
+
+        <!-- Campo para el comentario -->
+        <div class="mb-3">
+          <label for="comentario-huesped-mobile" class="form-label">Contanos tu experiencia!</label>
+          <textarea class="form-control" id="comentario-huesped-mobile" rows="3" required placeholder="Escribe tu comentario aquí"></textarea>
+        </div>
+
+        <!-- Botón para enviar -->
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary w-100">Enviar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Versión desktop: Comentarios a la derecha y formulario a la izquierda -->
+    <div class="row d-none d-md-flex">
+      <!-- Columna izquierda: Formulario -->
+      <div class="col-md-6">
+        <h3>Dejanos tu experiencia</h3>
+        <form id="form-comentario-desktop">
+          <!-- Campo para nombre y apellido -->
+          <div class="mb-3">
+            <label for="nombre-apellido-huesped-desktop" class="form-label">Nombre y Apellido</label>
+            <input type="text" class="form-control" id="nombre-apellido-huesped-desktop" required placeholder="Tu nombre">
+          </div>
+
+          <!-- Campo para el comentario -->
+          <div class="mb-3">
+            <label for="comentario-huesped-desktop" class="form-label">Contanos tu experiencia!</label>
+            <textarea class="form-control" id="comentario-huesped-desktop" rows="3" required placeholder="Escribe tu comentario aquí"></textarea>
+          </div>
+
+          <!-- Botón para enviar -->
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Columna derecha: Lista de comentarios -->
+      <div class="col-md-6">
+        <ul id="comentarios-lista" class="list-unstyled">
+          <li class="mb-3">
+            <div class="card p-3">
+              <strong>Juan Pérez</strong>
+              <p>¡Estuvimos de maravilla! La vista desde la casa es increíble. Volveremos sin duda.</p>
+            </div>
+          </li>
+          <li class="mb-3">
+            <div class="card p-3">
+              <strong>Maria Gómez</strong>
+              <p>Un lugar hermoso para desconectar. Todo muy limpio y cómodo. Altamente recomendado.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--! Section 5 Vesion only desktop
+ <section class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center">Experiencias de nuestros visitantes</h2>
+
+    <div class="row">
+       Columna izquierda - Lista de comentarios 
+      <div class="col-md-6 mb-4">
+      <!--?  Lista de comentarios 
+        <ul id="comentarios-lista" class="list-unstyled">
+          <li class="mb-3">
+            <div class="card p-3">
+              <strong>Juan Pérez</strong>
+              <p>¡Estuvimos de maravilla! La vista desde la casa es increíble. Volveremos sin duda.</p>
+            </div>
+          </li>
+          <li class="mb-3">
+            <div class="card p-3">
+              <strong>Maria Gómez</strong>
+              <p>Un lugar hermoso para desconectar. Todo muy limpio y cómodo. Altamente recomendado.</p>
+            </div>
+          </li>
+           Aquí se agregarán los nuevos comentarios 
+        </ul>
+      </div>
+
+     Columna derecha - Formulario para agregar comentarios 
+      <div class="col-md-6">
+        <h3>Dejanos tu experiencia</h3>
+        <form id="form-comentario">
+          <!--? Campo para nombre y apellido
+          <div class="mb-3">
+            <label for="nombre-apellido-huesped" class="form-label">Nombre y Apellido</label>
+            <input type="text" class="form-control" id="nombre-apellido-huesped" required placeholder="Tu nombre">
+          </div>
+
+          <!--? Campo para el comentario 
+          <div class="mb-3">
+            <label for="comentario-huesped" class="form-label">Contanos tu experiencia!</label>
+            <textarea class="form-control" id="comentario-huesped" rows="3" required placeholder="Escribe tu comentario aquí"></textarea>
+          </div>
+
+          <!--? Botón para enviar
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+
+ <!--* Section 6: "Contacto y reservas" -->
+  <!--TODO: Resolver el envío de la info del formulario de contacto-->
+  <!--TODO: Agregar iconos y armar los enlaces de contacto-->
+ <section class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center">Contacto y reservas</h2>
+
+    <div class="row">
+      <!--? Formulario de contacto-->
+      <div class="col-md-6 mb-4">
+        <form action="/enviar-formulario" method="POST">
+
+         <!--? Nombre y apellido - formulario contacto-->
+          <div class="mb-3">
+        <label for="nombre-apellido-contacto" class="form-label">Nombre y Apellido</label>
+        <input type="text" class="form-control" id="nombre-apellido-contacto" required placeholder="Campo obligatorio">
+          </div>
+
+         <!--? Email - formulario contacto-->
+         <div class="mb-3">
+        <label for="email-contacto" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email-contacto" placeholder="name@example.com (Campo obligatorio) " required>
+         </div>
+
+         <!--? Teléfono (opcional)-->
+         <div class="mb-3">
+        <label for="telefono-contacto" class="form-label">Número de teléfono</label>
+        <input type="tel" class="form-control" id="telefono-contacto" placeholder="Tu número de teléfono (opcional)">
+         </div>
+
+         <!--? Consulta - formulario contacto-->
+         <div class="mb-3">
+        <label for="consulta-contacto" class="form-label">Dejanos tu consulta</label>
+        <textarea class="form-control" id="consulta-contacto" rows="3" placeholder="Escribe tu consulta aquí"></textarea>
+         </div>
+
+         <!--? Botón para enviar -->
+         <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+         </div>
+
+        </form>
+      </div>
+
+      <!--? Enlaces de contacto-->
+      <div class="col-md-6">
+        <ul class="enlaces-contacto">
+          <li><a href="mailto:contacto@ejemplo.com">Correo electrónico</a></li>
+          <li><a href="tel:+123456789">Llamada telefónica</a></li>
+          <li><a href="https://www.whatsapp.com">WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/ejemplo">Instagram</a></li>
+          <li><a href="https://www.facebook.com/ejemplo">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!--* Footer: sobre la pagina -->
+  <!--TODO: Armar mis redes sociales y el linktree-->
+  <footer class="bg-dark text-light py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p>Sitio creado por: <strong>FoxyDev - Soluciones Software </strong></p>
+          <p><a href="mailto:tucorreo@example.com" class="text-light">contacto</a></p>
+          <p><a href="https://linktree.com" target="_blank" class="text-light">Visita mis redes sociales</a></p>
+          <p><a href="https://www.tuportafolio.com" target="_blank" class="text-light">Visita mis otros proyectos</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>  
+
+<!--!Script bootstrap!-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
