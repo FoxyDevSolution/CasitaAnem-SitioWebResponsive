@@ -1,0 +1,14 @@
+/*? Sobreescritura box-sizing bootstrap*/
+.selector-for-some-widget {
+    box-sizing: content-box;
+  }
+
+/*? Variables CSS */
+:root {
+    --marron-claro: #6f4e37;
+    --marron-oscuro: #543a28;
+    --marron-boton: #9d5b44;
+    --marron-hover: #7b4434;
+    --color-titulo: #72433c;
+  }
+  

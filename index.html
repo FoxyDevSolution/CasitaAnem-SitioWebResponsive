@@ -8,22 +8,28 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!--!Link Cs-->
   <link rel="stylesheet" href="styles/main.css">
+  <!--!Link google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 
 <!--TODO: Definir dónde irá el logo-->
 <body>
   <!--* Header: Título, logo y el botón principal. -->
-  <!--TODO: redireccionar cuando se aprete el boton a la section 1-->
-  <header class="text-center py-5">
-    <h2>DINA HUAPI - RIO NEGRO</h2>
-    <h1>Casita Anem</h1>
-    <p>Tu refugio en la Patagonia</p>
-    <button class="btn btn-primary">¡Conocenos!</button>
+  <header class="text-center py-5 section-header">
+    <h2 class="playfair-display-title">DINA HUAPI - RIO NEGRO</h2>
+    <img src="/brand/Logo-anem-sbg.png" alt="logo anem" class="logo-header img-fluid">
+    <h1 class="fleur-de-leah">Casita Anem</h1>
+    <p class="playfair-display header-p">Tu refugio en la Patagonia</p>
+    <button class="btn btn-primary btn-conocenos">
+      <a href="#rincon-patagonico" class="text-white text-decoration-none">¡Conocenos!</a>
+    </button>
   </header>
 
   <!--* Section 1: Rincón Patagónico -->
   <!--TODO: Cargar las fotos de Dina Huapi-->
-  <section class="py-5">
+  <section id="rincon-patagonico" class="py-5">
     <div class="container text-center">
   
       <!-- Versión mobile: Carrusel -->

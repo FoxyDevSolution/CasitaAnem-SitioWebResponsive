@@ -4,7 +4,31 @@
   }
 
 
-  /* Ajustes para el carrusel en móvil */
+ /*? Google Fonts */
+  .fleur-de-leah {   /**Fleur De Leah: header titulo*/
+    font-family: "Fleur De Leah", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 10rem;
+  }
+
+   /**Playfair: titulos (weight 600 style italic) y texto (weight 400 style normal)*/
+  .playfair-display {  
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  }
+
+  .playfair-display-title {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 2rem;
+  }
+
+  /*! Ajustes para el carrusel en móvil */
 .carousel-item {
   text-align: center;
 }
@@ -15,12 +39,12 @@
   border-radius: 50%;
 }
 
-/* Espaciado entre columnas en desktop */
+/*! Espaciado entre columnas en desktop */
 @media (min-width: 768px) {
   .row.d-md-flex {
     display: flex;
     align-items: flex-start;
-    gap: 2rem; /* Espaciado entre formulario y lista */
+    gap: 2rem; /*! Espaciado entre formulario y lista */
   }
 
   .col-md-6 {
@@ -28,11 +52,98 @@
   }
 }
 
-/* Botón primario personalizado */
+/*! Botón primario personalizado */
 .btn-primary {
-  background-color: #6f4e37; /* Marrón cálido */
+  background-color: #6f4e37; /*! Marrón cálido */
   border: none;
 }
 .btn-primary:hover {
   background-color: #543a28;
 }
+
+/** Header: Título, logo y el botón principal. */
+
+header.section-header{
+  /*? background mobile*/
+  background-image: url("/assets/images/bgmobile-header-anem.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh; /* Altura de la pantalla completa */
+  display: flex;
+  flex-direction: column; /* Ordenar elementos verticalmente */
+  justify-content: center; /* Centrar contenido verticalmente */
+  align-items: center; /* Centrar contenido horizontalmente */
+  text-align: center; /* Centrar textos */
+  color: #72433c; /* Color de texto (ajustar al diseño) */
+}
+
+   /*? background desktop*/
+   @media (min-width: 768px) {
+    .section {
+      background-image: url("/assets/images/gbdesktop-header-anem.png");
+    }
+  }
+
+
+@media (min-width: 768px) {
+  header.section-header {
+    background-image: url("/assets/images/gbdesktop-header-anem.png"); /* Fondo desktop */
+  }
+}
+
+/** Estilo del título principal **/
+header.section-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem; /* Tamaño del texto (mobile) */
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  header.section-header h2 {
+    font-size: 2.5rem; /* Tamaño mayor para desktop */
+  }
+}
+
+/** Estilo del logo **/
+header.section-header .logo-header {
+  max-width: 200px; /* Limitar ancho del logo */
+  margin: 1.5rem 0; /* Espaciado vertical */
+}
+
+/** Estilo del nombre principal **/
+header.section-header h1 {
+  font-family: "Fleur de Leah", cursive;
+  font-size: 4rem; /* Tamaño mobile */
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  header.section-header h1 {
+    font-size: 5rem; /* h1 (casita anem) para desktop */
+  }
+}
+
+/** Estilo del párrafo **/
+header.section-header .header-p {
+  font-family: "Playfair Display", serif;
+  font-size: 1.7rem; /* Tamaño mobile */
+  margin-bottom: 2rem;
+}
+
+/** Estilo del botón **/
+header.section-header .btn-conocenos {
+  background-color: #9d5b44; /* Color del botón */
+  border: none;
+  color: #fff;
+  font-size: 1.1rem; /* Tamaño de texto */
+  padding: 0.75rem 1.5rem; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease;
+}
+
+header.section-header .btn-conocenos:hover {
+  background-color: #7b4434; /* Color al pasar el mouse */
+}
+
+/*TODO: AGREGAR FUNCION AL BOTON DE HEADER, CHEQUEAR CSS PARA EVITAR EL CODIGO REPETIDO, REVEER TAMAÑO, MARGIN Y PAGGING DE LA LETRA*/
