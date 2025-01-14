@@ -17,9 +17,9 @@
 <!--TODO: Definir dónde irá el logo-->
 <body>
   <!--* Header: Título, logo y el botón principal. -->
-  <header class="text-center py-5 section-header">
+  <header class="text-center py-5 section-header" id="header-anem">
     <h2 class="playfair-display-title">DINA HUAPI - RIO NEGRO</h2>
-    <img src="/brand/Logo-anem-sbg.png" alt="logo anem" class="logo-header img-fluid">
+    <img src="/brand/Logo-anem-recolored.png" alt="logo anem" class="logo-header img-fluid">
     <h1 class="fleur-de-leah">Casita Anem</h1>
     <p class="playfair-display header-p">Tu refugio en la Patagonia</p>
     <button class="btn btn-primary btn-conocenos">
@@ -27,9 +27,33 @@
     </button>
   </header>
 
+
+  <!--*Navbar: Visible en las secciones 1 a 6 (no en el header)-->
+  <nav class="navbar navbar-expand-lg navbar-hidden" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#header-anem">
+        <img src="/brand/Logo-anem-recolored.png" alt="Logo Anem" width="55" height="55" class="d-inline-block align-text-center">
+        Casita Anem </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#rincon-patagonico">Rincón patagonico</a>
+          <a class="nav-link active" href="#nuestra-casa">Nuestra casa</a>
+          <a class="nav-link active" href="#donde-estamos">¿Dónde estamos?</a>
+          <a class="nav-link active" href="#sobre-nosotros">Sobre nosotros</a>
+          <a class="nav-link active" href="#experiencias-huespedes">Experiencias de huespedes</a>
+          <a class="nav-link active" href="#contacto-reservas">Contacto y reservas</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<!--TODO: COMENZAR CON LA SECTION 1 -->
   <!--* Section 1: Rincón Patagónico -->
   <!--TODO: Cargar las fotos de Dina Huapi-->
-  <section id="rincon-patagonico" class="py-5">
+  <section id="rincon-patagonico" class="py-5 s1-rincon-patagonico">
     <div class="container text-center">
   
       <!-- Versión mobile: Carrusel -->
@@ -96,31 +120,10 @@
   
     </div>
   </section>
-  
-  <!--! section 1 Version only desktop
-  <section class="py-5">
-    <div class="container text-center">
-      <h2>Conocé este hermoso rincón Patagónico</h2>
-
-      <div class="row">
-        <div class="col-md-4">
-          <img src="assets/images/image1.jpg" alt="Imagen 1" class="img-fluid rounded-circle">
-        </div>
-        <div class="col-md-4">
-          <img src="assets/images/image2.jpg" alt="Imagen 2" class="img-fluid rounded-circle">
-        </div>
-        <div class="col-md-4">
-          <img src="assets/images/image3.jpg" alt="Imagen 3" class="img-fluid rounded-circle">
-        </div>
-      </div>
-      <p>Nuestra casa se encuentra ubicada en un entorno natural incomparable, para unas vacaciones inolvidables. <br> Te invitamos a disfrutar de la tranquilidad y bellleza de Dina Huapi</p>
-    </div>
-  </section>
--->
 
   <!--* Section 2: Nuestra Casa -->
   <!--TODO: Cargar fotos de la casa -->
-  <section class="bg-light py-5">
+  <section class="bg-light py-5" id="nuestra-casa">
     <div class="container">
       <h2 class="text-center mb-4">Nuestra Casa</h2>
   
@@ -184,35 +187,9 @@
     </div>
   </section>
   
-  <!--! Section 2 Version only desktop
-  <section class="bg-light py-5">
-    <div class="container">
-      <h2 class="text-center">Nuestra Casa</h2>
-      <div class="row text-center">
-        <div class="col-md-3">
-          <img src="assets/images/feature1.jpg" alt="Comodidad" class="img-fluid">
-          <p>2 habitaciones:<br>1 habitación con 4 camas individuales<br>1 habitación con 1 cama matrimonial</p>
-        </div>
-        <div class="col-md-3">
-          <img src="assets/images/feature2.jpg" alt="Baño privado" class="img-fluid">
-          <p>1 baño privado</p>
-        </div>
-        <div class="col-md-3">
-          <img src="assets/images/feature3.jpg" alt="Cocina equipada" class="img-fluid">
-          <p>Cocina totalmente equipada</p>
-        </div>
-        <div class="col-md-3">
-          <img src="assets/images/feature4.jpg" alt="patio estacionamiento" class="img-fluid">
-          <p>Patio privado con posibilidad de estacionar su vehículo al aire libre.</p>
-        </div>
-      </div>
-    </div>
-  </section>
--->
-
 <!--* Section 3: Dónde estamos -->
   <!--TODO: Cargar maps de la casa -->
-  <section class="py-5">
+  <section class="py-5" id="donde-estamos">
     <div class="container text-center">
       <h2>¿Dónde estamos?</h2>
       <p>Con vehículo podés llegar en...</p>
@@ -284,52 +261,11 @@
       </div>
     </div>
   </section>
-  
-<!--! Section 4 Vestion only desktop
-  <section class="bg-light py-5">
-    <div class="container">
-      <h2 class="text-center">Sobre nosotros</h2>
-      <p>Somos una familia nacida y criada en Bariloche, rodeados de lagos y montañas. <br>
-        Amamos la naturaleza y nuestra tierra, y queremos compartir nuestro hogar con nuestros huéspedes. <br>
-        Buscamos que su estadía sea inolvidable y que sientan la magia de la Patagonia.
-        Nos esforzamos para que se sientan cómodos y bienvenidos. <br>
-        Aquí le compartimos algunas reseñas:
-      </p>
-  
-    
-      <div class="row">
-     
-        <div class="col-md-4 mb-4">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
-          <p><strong>Primer nombre</strong></p>
-        </div>
-  
-
-        <div class="col-md-4 mb-4">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
-          <p><strong>Segundo nombre</strong></p>
-        </div>
-  
-
-        <div class="col-md-4 mb-4">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
-          <p><strong>Tercer nombre</strong></p>
-        </div>
-      </div>
-  
-
-      <div class="text-center mt-4">
-        <button class="btn btn-primary">Deja tu opinión</button>
-      </div>
-    </div>
-  </section>
--->
-
 
 
  <!--* Section 5: Experiencias huespedes -->
  <!--TODO: Desarrollar el algoritmo para captar el comentario de formulario y mostrarlo en la lista de comentarios-->
- <section class="bg-light py-5">
+ <section class="bg-light py-5" id="experiencias-huespedes">
   <div class="container">
     <h2 class="text-center mb-4">Experiencias de nuestros visitantes</h2>
 
@@ -433,64 +369,10 @@
 </section>
 
 
-<!--! Section 5 Vesion only desktop
- <section class="bg-light py-5">
-  <div class="container">
-    <h2 class="text-center">Experiencias de nuestros visitantes</h2>
-
-    <div class="row">
-       Columna izquierda - Lista de comentarios 
-      <div class="col-md-6 mb-4">
-      <!--?  Lista de comentarios 
-        <ul id="comentarios-lista" class="list-unstyled">
-          <li class="mb-3">
-            <div class="card p-3">
-              <strong>Juan Pérez</strong>
-              <p>¡Estuvimos de maravilla! La vista desde la casa es increíble. Volveremos sin duda.</p>
-            </div>
-          </li>
-          <li class="mb-3">
-            <div class="card p-3">
-              <strong>Maria Gómez</strong>
-              <p>Un lugar hermoso para desconectar. Todo muy limpio y cómodo. Altamente recomendado.</p>
-            </div>
-          </li>
-           Aquí se agregarán los nuevos comentarios 
-        </ul>
-      </div>
-
-     Columna derecha - Formulario para agregar comentarios 
-      <div class="col-md-6">
-        <h3>Dejanos tu experiencia</h3>
-        <form id="form-comentario">
-          <!--? Campo para nombre y apellido
-          <div class="mb-3">
-            <label for="nombre-apellido-huesped" class="form-label">Nombre y Apellido</label>
-            <input type="text" class="form-control" id="nombre-apellido-huesped" required placeholder="Tu nombre">
-          </div>
-
-          <!--? Campo para el comentario 
-          <div class="mb-3">
-            <label for="comentario-huesped" class="form-label">Contanos tu experiencia!</label>
-            <textarea class="form-control" id="comentario-huesped" rows="3" required placeholder="Escribe tu comentario aquí"></textarea>
-          </div>
-
-          <!--? Botón para enviar
-          <div class="mb-3">
-            <button type="submit" class="btn btn-primary">Enviar</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
--->
-
-
  <!--* Section 6: "Contacto y reservas" -->
   <!--TODO: Resolver el envío de la info del formulario de contacto-->
   <!--TODO: Agregar iconos y armar los enlaces de contacto-->
- <section class="bg-light py-5">
+ <section class="bg-light py-5" id="contacto-reservas">
   <div class="container">
     <h2 class="text-center">Contacto y reservas</h2>
 
@@ -564,5 +446,7 @@
 
 <!--!Script bootstrap!-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!--!Script propios!-->
+  <script src="scripts.js"></script>
 </body>
 </html>

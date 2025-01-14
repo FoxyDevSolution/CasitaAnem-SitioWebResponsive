@@ -39,6 +39,7 @@
   border-radius: 50%;
 }
 
+
 /*! Espaciado entre columnas en desktop */
 @media (min-width: 768px) {
   .row.d-md-flex {
@@ -52,16 +53,16 @@
   }
 }
 
-/*! Botón primario personalizado */
+/*? Header: Título, logo y el botón principal. */
+
+/** Botón primario personalizado */
 .btn-primary {
-  background-color: #6f4e37; /*! Marrón cálido */
+  background-color: #6f4e37; 
   border: none;
 }
 .btn-primary:hover {
   background-color: #543a28;
 }
-
-/** Header: Título, logo y el botón principal. */
 
 header.section-header{
   /*? background mobile*/
@@ -78,7 +79,7 @@ header.section-header{
   color: #72433c; /* Color de texto (ajustar al diseño) */
 }
 
-   /*? background desktop*/
+   /* background desktop*/
    @media (min-width: 768px) {
     .section {
       background-image: url("/assets/images/gbdesktop-header-anem.png");
@@ -107,7 +108,7 @@ header.section-header h2 {
 
 /** Estilo del logo **/
 header.section-header .logo-header {
-  max-width: 200px; /* Limitar ancho del logo */
+  max-width: 250px; /* Limitar ancho del logo */
   margin: 1.5rem 0; /* Espaciado vertical */
 }
 
@@ -141,9 +142,34 @@ header.section-header .btn-conocenos {
   border-radius: 5px; /* Bordes redondeados */
   transition: background-color 0.3s ease;
 }
-
 header.section-header .btn-conocenos:hover {
   background-color: #7b4434; /* Color al pasar el mouse */
 }
+/*TODO HEADER: CHEQUEAR CSS PARA EVITAR EL CODIGO REPETIDO*/
 
-/*TODO: AGREGAR FUNCION AL BOTON DE HEADER, CHEQUEAR CSS PARA EVITAR EL CODIGO REPETIDO, REVEER TAMAÑO, MARGIN Y PAGGING DE LA LETRA*/
+/*? Navbar style */
+#navbar {
+  background-color: #d4907ca2;
+    position: fixed; /* Mantener fijo en la parte superior */
+    top: 0; /* Pegarlo a la parte superior */
+    width: 100%; /* Abarcar todo el ancho de la página */
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out; /* Animaciones suaves para aparecer/desaparecer */
+}
+
+nav a.navbar-brand {
+  font-family: "Fleur De Leah", serif;
+  font-size: 2.2rem;
+}
+
+.navbar-hidden {
+  display: none;
+  transform: translateY(-100%); /* Mover hacia arriba fuera de la pantalla */
+  opacity: 0; /* Ocultar visualmente */
+}
+
+
+
+
+
+/*? Section 1: Rincón Patagónico */
