@@ -1,10 +1,10 @@
-/*? Sobreescritura box-sizing bootstrap*/
+                      /*? Sobreescritura box-sizing bootstrap*/
 .selector-for-some-widget {
     box-sizing: content-box;
   }
 
 
- /*? Google Fonts */
+                      /*? Google Fonts */
   .fleur-de-leah {   /**Fleur De Leah: header titulo*/
     font-family: "Fleur De Leah", serif;
     font-weight: 500;
@@ -18,7 +18,9 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 2rem;
+  font-size: 1.8rem;
+  color: rgb(31, 22, 22);
+
   }
 
   .playfair-display-title {
@@ -26,9 +28,10 @@
     font-weight: 600;
     font-style: italic;
     font-size: 2rem;
+    
   }
 
-  /*! Ajustes para el carrusel en móvil */
+        /*! Ajustes para el carrusel en móvil */
 .carousel-item {
   text-align: center;
 }
@@ -39,8 +42,7 @@
   border-radius: 50%;
 }
 
-
-/*! Espaciado entre columnas en desktop */
+      /*! Espaciado entre columnas en desktop */
 @media (min-width: 768px) {
   .row.d-md-flex {
     display: flex;
@@ -53,10 +55,9 @@
   }
 }
 
-/*? Header: Título, logo y el botón principal. */
-/*TODO HEADER: CHEQUEAR CSS PARA EVITAR EL CODIGO REPETIDO*/
+                    /*? Header: Título, logo y el botón principal. */
 
-/** Botón primario personalizado */
+  /** Botón primario personalizado */
 .btn-primary {
   background-color: #6f4e37; 
   border: none;
@@ -65,23 +66,23 @@
   background-color: #543a28;
 }
 
+  /**background header mobile*/
 header.section-header{
-  /*? background mobile*/
   background-image: url("/assets/images/bgmobile-header-anem.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 100vh; /* Altura de la pantalla completa */
+  min-height: 100vh; 
   display: flex;
-  flex-direction: column; /* Ordenar elementos verticalmente */
-  justify-content: center; /* Centrar contenido verticalmente */
-  align-items: center; /* Centrar contenido horizontalmente */
-  text-align: center; /* Centrar textos */
-  color: #72433c; /* Color de texto (ajustar al diseño) */
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  color: #72433c; 
 }
 
-/**background header*/
-   /* background desktop*/
+  /**background header*/
+     /*! background desktop*/
    @media (min-width: 768px) {
     .section {
       background-image: url("/assets/images/gbdesktop-header-anem.png");
@@ -95,7 +96,7 @@ header.section-header{
   }
 }
 
-/** Estilo del título principal **/
+  /** Estilo del título principal **/
 header.section-header h2 {
   font-family: "Playfair Display", serif;
   font-size: 1.5rem; /* Tamaño del texto (mobile) */
@@ -104,37 +105,38 @@ header.section-header h2 {
 
 @media (min-width: 768px) {
   header.section-header h2 {
-    font-size: 2.5rem; /* Tamaño mayor para desktop */
+    font-size: 2.5rem; 
   }
 }
 
-/** Estilo del logo **/
+  /** Estilo del logo **/
 header.section-header .logo-header {
-  max-width: 250px; /* Limitar ancho del logo */
-  margin: 1.5rem 0; /* Espaciado vertical */
+  max-width: 250px; 
+  margin: 1.5rem 0; 
 }
 
-/** Estilo del nombre principal **/
+  /** Estilo del nombre principal **/
 header.section-header h1 {
   font-family: "Fleur de Leah", cursive;
-  font-size: 4rem; /* Tamaño mobile */
+  font-size: 4rem; 
   margin-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
   header.section-header h1 {
-    font-size: 5rem; /* h1 (casita anem) para desktop */
+    font-size: 5rem; 
   }
 }
 
-/** Estilo del párrafo **/
+  /** Estilo del párrafo **/
 header.section-header .header-p {
   font-family: "Playfair Display", serif;
-  font-size: 1.7rem; /* Tamaño mobile */
+  font-size: 1.7rem; 
   margin-bottom: 2rem;
+  color: rgb(31, 22, 22);
 }
 
-/** Estilo del botón **/
+  /** Estilo del botón **/
 header.section-header .btn-conocenos {
   background-color: #9d5b44; /* Color del botón */
   border: none;
@@ -145,11 +147,11 @@ header.section-header .btn-conocenos {
   transition: background-color 0.3s ease;
 }
 header.section-header .btn-conocenos:hover {
-  background-color: #7b4434; /* Color al pasar el mouse */
+  background-color: #7b4434; 
 }
 
 /*TODO NAVBAR: CHEQUEAR FONDO Y COLOR DE LA TRANSPARENCIA,SI NO SE PIERDE EN EL CONTENIDO*/
-/*? Navbar style */
+                             /*? Navbar style */
 #navbar {
   background-color: #d4907ca2;
     position: fixed; /* Mantener fijo en la parte superior */
@@ -177,25 +179,25 @@ nav a.navbar-brand {
 }
 
 
-/*? Section 1: Rincón Patagónico */
+                         /*? Section 1: Rincón Patagónico */
 
-/**Background section 1*/
-
+  /**Background section 1*/
+      /*! background mobile*/
 section.s1-rincon-patagonico {
-/* background mobile*/
+
   background-image: url("/assets/images/bgmobile1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 100vh; /* Altura de la pantalla completa */
+  min-height: 100vh; 
   display: flex;
-  flex-direction: column; /* Ordenar elementos verticalmente */
-  justify-content: center; /* Centrar contenido verticalmente */
-  align-items: center; /* Centrar contenido horizontalmente */
-  text-align: center; /* Centrar textos */
-  color: #72433c; /* Color de texto (ajustar al diseño) */
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  color: #72433c; /
 }
-   /* background desktop*/
+      /*! background desktop*/
    @media (min-width: 768px) {
     section.s1-rincon-patagonico {
       background-image: url("/assets/images/bgdesktop1.png");
@@ -203,30 +205,38 @@ section.s1-rincon-patagonico {
     }
   }
 
-/**h2 section 1*/
-/*version mobile*/
+  /**h2 section 1*/
+      /*!h2 section 1 - version mobile*/
 section h2.h2-s1 {
   font-size: 2rem;
   margin-top: 15px;
   margin-bottom: -25px;
 }
-/*version desktop*/
-@media (min-width: 768px) {
-  section.s1-rincon-patagonico h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  }
-}
 
-/**img carrousel mobile**/
+      /*! section 1 - img carrousel mobile**/
 div img.car-mobile {
     height: 450px; 
     object-fit: cover; 
     object-position: center;
   }
 
-  /**p section1 mobile**/
+      /*! section 1 - p section1 mobile**/
 p.p-s1-mobile {
   font-size: 1.2rem;
   font-weight: 700;
+  color: rgb(31, 22, 22);
 }
+
+      /*! section 1 - version desktop*/
+@media (min-width: 768px) {
+  section.s1-rincon-patagonico h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  }
+
+  section.s1-rincon-patagonico p.p-s1-desktop{
+    
+  }
+}
+
+
