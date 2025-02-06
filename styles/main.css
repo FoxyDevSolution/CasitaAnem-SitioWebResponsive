@@ -233,10 +233,34 @@ p.p-s1-mobile {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
   }
-
-  section.s1-rincon-patagonico p.p-s1-desktop{
-    
-  }
 }
 
+
+                         /*? Section 2: Nuestra Casa*/
+
+  /**Background section 2*/
+      /*! background mobile*/
+      section.s2-rincon-patagonico {
+
+        background-image: url("/assets/images/bgmobile2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 100vh; 
+        display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        text-align: center; 
+      }
+       /*! background desktop*/
+         @media (min-width: 768px) {
+          section.s2-rincon-patagonico {
+            background-image: url("/assets/images/bgdesktop2.png");
+      
+          }
+        }
+         section.s2-rincon-patagonico h2{
+          font-size: 2.5rem;
+         }
 
