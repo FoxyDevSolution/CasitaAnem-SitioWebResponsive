@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", updateNavbarVisibility);
 });
 */
-
+//!Navbar 
 document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.getElementById("navbar");
     const sections = document.querySelectorAll("section"); // Todas las secciones
@@ -47,3 +47,22 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", updateNavbarVisibility);
     updateNavbarVisibility(); // Ejecutar al inicio
 });
+
+//! Modal Section 2 desktop
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".clickable-img");
+    const modalImage = document.getElementById("modalImage");
+    const modalTitle = document.getElementById("imageModalLabel");
+    const modalEl = document.getElementById("imageModal");
+  
+    images.forEach(img => {
+      img.addEventListener("click", function () {
+        modalImage.src = this.src;
+        modalTitle.textContent = this.alt;
+        // Mostrar el modal usando Bootstrap
+        new bootstrap.Modal(modalEl).show();
+      });
+    });
+  });
+  
+  

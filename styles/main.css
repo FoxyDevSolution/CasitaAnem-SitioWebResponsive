@@ -263,4 +263,44 @@ p.p-s1-mobile {
          section.s2-rincon-patagonico h2{
           font-size: 2.5rem;
          }
-
+       /*! Carrousel imganes de la casa*/
+       @media (max-width: 767px) {
+        /* Contenedor fijo del carrusel */
+        #casaCarousel {
+          height: 450px;
+          overflow: hidden;
+          position: relative;
+        }
+      
+        /* Cada ítem del carrusel mantiene la altura fija */
+        #casaCarousel .carousel-item {
+          height: 450px;
+          position: relative; /* Para posicionar el caption dentro */
+        }
+      
+        /* La imagen ocupa todo el contenedor */
+        #casaCarousel .carousel-item img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+          display: block;
+        }
+      
+        /* El caption se superpone en la parte inferior */
+        #casaCarousel .carousel-item p {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          margin: 0;
+          padding: 0.5rem;
+          background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente para mayor legibilidad */
+          color: #fff;
+          text-align: center;
+          font-size: 1rem;
+          z-index: 10;
+        }
+      }
+      
+      
