@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Casita Anem</title>
+  <!--!Metaetiquetas SEO-->
+  <meta name="description" content="Alquiler vacacional en Dina Huapi, Patagonia. Disfruta de la naturaleza y comodidad en Casita Anem, tu refugio con vista al Cerro Leones y cercano al Lago Nahuel Huapi.">
+  <meta name="keywords" content="alquiler vacacional, cabaña Patagonia, Dina Huapi, Bariloche, turismo Río Negro, Cerro Leones, Lago Nahuel Huapi, alojamiento naturaleza">
+  <!--!Título SEO-->
+  <title>Casita Anem - Alquiler Vacacional en Dina Huapi, Patagonia</title>
   <!--!Link bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!--!Link Cs-->
@@ -14,11 +18,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <!--TODO: hacer un boton que suba hacia arriba de toda la pag? quizas abajo a a la derecha-->
+<!--///TODO: Revisar rutas de las imagenes, algunas estan usando rutas que van a la raiz del servidor, mejor usar rutas relativas -->
+<!--///TODO: Herramientas como ImageOptim o Squoosh para mejorar el tiempo de carga? -->
+<!--///TODO: `description` y `keywords` para mejorar el posicionamiento en buscadores-->
+<!--///TODO: Mejorar el head y hacer atractivo el title-->
+<!--///TODO:  "Casita Anem - Alquiler Vacacional en Dina Huapi, Patagonia". no será mas descriptivo como titulo de la pag? -->
 <body>
   <!--* Header: Título, logo y el botón principal. -->
   <header class="text-center py-5 section-header" id="header-anem">
     <h2 class="playfair-display-title">DINA HUAPI - RIO NEGRO</h2>
-    <img src="/brand/Logo-anem-recolored.png" alt="logo anem" class="logo-header img-fluid">
+    <img src="brand/Logo-anem-recolored.png" alt="logo anem" class="logo-header img-fluid">
     <h1 class="fleur-de-leah">Casita Anem</h1>
     <p class="playfair-display header-p">Tu refugio en la Patagonia</p>
     <button class="btn btn-primary btn-conocenos">
@@ -27,10 +36,12 @@
   </header>
 
   <!--*Navbar: Visible en las secciones 1 a 6 (no en el header)-->
-  <nav class="navbar navbar-expand-lg navbar-hidden" id="navbar">
+   <!--///TODO: los contrastes de color cumplan con WCAG?, especialmente en el navbar y botones.--> 
+  <!--///TODO: Una alternativa para el movimiento del navbar es usar `IntersectionObserver` para detectar cuando el header sale de la vista, seria más preciso?--> 
+  <nav class="navbar navbar-expand-lg " id="navbar">  <!-- elimine la clase navbar-hidden -->
     <div class="container-fluid">
       <a class="navbar-brand" href="#header-anem">
-        <img src="/brand/Logo-anem-recolored.png" alt="Logo Anem" width="55" height="55" class="d-inline-block align-text-center">
+        <img src="brand/Logo-anem-recolored.png" alt="Logo Anem" width="55" height="55" class="d-inline-block align-text-center">
         Casita Anem </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -49,6 +60,10 @@
   </nav>
 
   <!--* Section 1: Rincón Patagónico -->
+  <!--TODO: Sec1. Debería hacer un modal con las imagenes en el desktop? -->
+  <!--///TODO: sec1. Acomodar el margin o el padding de el h1 rincon patagonico-->
+  <!--///TODO: Sec1. Texto descriptivo del carrousel dice Fina Huapi x? -->
+  <!--///TODO: sec1. las imágenes en desktop usan `rounded-circle`, lo que las hace redondas, pero en mobile son rectangulares. Considerar mantener una forma consistente o justificar el cambio?-->
   <section id="rincon-patagonico" class="py-5 s1-rincon-patagonico">
     <div class="container text-center">
   
@@ -69,16 +84,16 @@
           <!-- Imágenes del carrusel -->
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="assets/images/dh-1-marco.png" class="d-block w-100 rounded car-mobile" alt="Dina huapi 1">
+              <img src="assets/images/dh-1-marco.png" class="d-block w-100 rounded car-mobile" alt="Vista del aire de la costa de Dina Huapi">
             </div>
             <div class="carousel-item">
-              <img src="assets/images/dh-3-marco.png" class="d-block w-100 rounded car-mobile" alt="Dina Huapi 2">
+              <img src="assets/images/dh-3-marco.png" class="d-block w-100 rounded car-mobile" alt="Vista del aire de la ciudad de Dina Huapi">
             </div>
             <div class="carousel-item">
-              <img src="assets/images/dh-4-marco.png" class="d-block w-100 rounded car-mobile" alt="Dina Huapi 3">
+              <img src="assets/images/dh-4-marco.png" class="d-block w-100 rounded car-mobile" alt="Paisaje desde la costa de Dina Huapi con flores">
             </div>
             <div class="carousel-item">
-              <img src="assets/images/dh-5-marco.png" class="d-block w-100 rounded car-mobile" alt="Dina Huapi 3">
+              <img src="assets/images/dh-5-marco.png" class="d-block w-100 rounded car-mobile" alt="Vista del atardecer de la playa de Dina Huapi">
             </div>
           </div>
   
@@ -104,13 +119,13 @@
         <!--? Imágenes estáticas en desktop -->
         <div class="row mt-4">
           <div class="col-md-4">
-            <img src="assets/images/dh-1-marco.png" alt="Imagen 1" class="img-fluid rounded-circle">
+            <img src="assets/images/dh-1-marco.png" alt="Vista del aire de la costa de Dina Huapi" class="img-fluid rounded-circle">
           </div>
           <div class="col-md-4">
-            <img src="assets/images/dh-4-marco.png" alt="Imagen 3" class="img-fluid rounded-circle">
+            <img src="assets/images/dh-4-marco.png" alt="Paisaje desde la costa de Dina Huapi con flores" class="img-fluid rounded-circle">
           </div>
           <div class="col-md-4">
-            <img src="assets/images/dh-5-marco.png" alt="Imagen 4" class="img-fluid rounded-circle">
+            <img src="assets/images/dh-5-marco.png" alt="Vista del atardecer de la playa de Dina Huapi" class="img-fluid rounded-circle">
           </div>
         </div>
   
@@ -122,12 +137,14 @@
   </section>
 
   <!--* Section 2: Nuestra Casa -->
-  <!--TODO: Resolver el alto de las imagenes de la version mobile, se mueve raro cuando cambia el carrousel-->
+  <!--TODO: ver el background del fondo desktop, hay mucha diferencia entre la section 1 y la 2 --> 
+  <!--///TODO: Ver margin o padding del h1 section 2-->
+  <!--///TODO: En el modal hay que asegurarse de que todas las imágenes tengan la clase `clickable-img` para que funcionen correctamente. -->
   <section class="bg-light py-5 s2-rincon-patagonico" id="nuestra-casa">
     <div class="container">
       <h2 class="text-center mb-4 playfair-display-title">Nuestra Casa</h2>
   
-      <!-- Versión Desktop -->
+      <!--! Versión Desktop -->
       <div class="row text-center d-none d-md-flex">
         <div class="col-md-3">
           <img src="assets/images/casa4.jpg" alt="Casa entrada" class="img-fluid clickable-img">
@@ -156,7 +173,7 @@
       </div>
       
   
-      <!-- Versión Mobile -->
+      <!--! Versión Mobile -->
       <div id="casaCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active text-center">
@@ -273,7 +290,8 @@
 
 
  <!--* Section 5: Experiencias huespedes -->
- <!--TODO: Desarrollar el algoritmo para captar el comentario de formulario y mostrarlo en la lista de comentarios-->
+  <!--TODO: Desarrollar el algoritmo para captar el comentario de formulario y mostrarlo en la lista de comentarios-->
+ <!--TODO: Al haber dos formularios con ID diferentes, complica el manejo de envios? Creo que es mejor usar clases responsivas en un unico formulario.-->
  <section class="bg-light py-5" id="experiencias-huespedes">
   <div class="container">
     <h2 class="text-center mb-4">Experiencias de nuestros visitantes</h2>
@@ -381,6 +399,7 @@
  <!--* Section 6: "Contacto y reservas" -->
   <!--TODO: Resolver el envío de la info del formulario de contacto-->
   <!--TODO: Agregar iconos y armar los enlaces de contacto-->
+  <!--TODO: validacion del lado del cliente? Creo que deberia agregar validaciones con Js-->
  <section class="bg-light py-5" id="contacto-reservas">
   <div class="container">
     <h2 class="text-center">Contacto y reservas</h2>
@@ -469,11 +488,28 @@
 </div>
 
 
-
-
 <!--!Script bootstrap!-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!--!Script propios!-->
   <script src="scripts.js"></script>
+  <!--!Script title-->
+  <script>
+    const titulos = [
+      "🏡 Casita Anem",
+      "✨ Alquiler Vacacional",
+      "🏔️ Dina Huapi",
+      "🌲 Rio Negro",
+      "🌿 Patagonia Argentina",
+    ];
+  
+    let indice = 0;
+
+    function rotarTitulo() {
+      document.title = titulos[indice];
+      indice = (indice + 1) % titulos.length; 
+    }
+
+    setInterval(rotarTitulo, 2500);
+  </script>
 </body>
 </html>

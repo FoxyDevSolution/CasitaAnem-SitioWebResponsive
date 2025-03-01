@@ -22,7 +22,50 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", updateNavbarVisibility);
 });
 */
+
+/////TODO: - El código del navbar podría simplificarse usando `IntersectionObserver` en lugar de calcular manualmente las posiciones.
+
+
 //!Navbar 
+
+const header = document.getElementById('header-anem');
+const navbar = document.getElementById('navbar');
+
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1 
+};
+
+const observerCallback = (entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      navbar.classList.add('navbar-visible');
+      navbar.classList.remove('navbar-hidden');
+    } else {
+      navbar.classList.remove('navbar-visible');
+      navbar.classList.add('navbar-hidden');
+    }
+  });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+observer.observe(header);
+
+//! Cerrar navbar al hacer clic en un enlace 
+document.querySelectorAll('#navbarNavAltMarkup .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const navbarCollapse = document.getElementById('navbarNavAltMarkup');
+      
+      // Cierra el menú colapsado usando Bootstrap
+      if (navbarCollapse.classList.contains('show')) {
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+        bsCollapse.hide();
+      }
+    });
+  });
+
+/*
 document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.getElementById("navbar");
     const sections = document.querySelectorAll("section"); // Todas las secciones
@@ -47,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", updateNavbarVisibility);
     updateNavbarVisibility(); // Ejecutar al inicio
 });
+*/
 
 //! Modal Section 2 desktop
 document.addEventListener("DOMContentLoaded", function () {

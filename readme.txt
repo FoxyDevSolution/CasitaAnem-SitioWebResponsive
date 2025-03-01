@@ -8,6 +8,27 @@ Section 5: Experiencias huespedes
 Section 6: "Contacto y reservas"
 Footer: sobre la página
 
+
+**Pasos a Seguir:**
+
+1. **Corregir Errores:** Arreglar rutas de imágenes, CSS con errores, y placeholders (como el mapa).
+
+2. **Optimizar:** Imágenes, fuentes, y código (minificación).
+
+3. **Mejorar Accesibilidad:** Textos alternativos, contraste de colores, y semántica HTML.
+
+4. **Unificar Estilos:** Asegurar consistencia en fuentes, tamaños, y colores.
+
+5. **Testear:** En diferentes navegadores y dispositivos para garantizar compatibilidad.
+
+
+
+
+
+
+
+
+
 Codigo Alternativo HTML: 
 <!--! section 1 Version only desktop
   <section class="py-5">

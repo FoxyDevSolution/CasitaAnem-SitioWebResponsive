@@ -1,3 +1,6 @@
+
+/*TODO: Hay algunas clases que no se están utilizando? Hay que eliminarlas
+/*TODO: Hay una linea blanca entre sections que se ve horrible.
                       /*? Sobreescritura box-sizing bootstrap*/
 .selector-for-some-widget {
     box-sizing: content-box;
@@ -68,7 +71,7 @@
 
   /**background header mobile*/
 header.section-header{
-  background-image: url("/assets/images/bgmobile-header-anem.png");
+  background-image: url("/assets/images/bgmobile-header-anem.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -85,14 +88,14 @@ header.section-header{
      /*! background desktop*/
    @media (min-width: 768px) {
     .section {
-      background-image: url("/assets/images/gbdesktop-header-anem.png");
+      background-image: url("assets/images/gbdesktop-header-anem.png");
     }
   }
 
 
 @media (min-width: 768px) {
   header.section-header {
-    background-image: url("/assets/images/gbdesktop-header-anem.png"); /* Fondo desktop */
+    background-image: url("/assets/images/gbdesktop-header-anem.webp"); /* Fondo desktop */
   }
 }
 
@@ -152,13 +155,40 @@ header.section-header .btn-conocenos:hover {
 
 /*TODO NAVBAR: CHEQUEAR FONDO Y COLOR DE LA TRANSPARENCIA,SI NO SE PIERDE EN EL CONTENIDO*/
                              /*? Navbar style */
+ #navbar {
+   background-color: #d4907ca2;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 1000;
+   transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Unificamos transiciones */
+   margin-top: 0; /* Eliminamos el margen negativo */
+   transform: translateY(-100%); /* Estado inicial oculto */
+   opacity: 0; /* Oculto inicialmente */
+  }        
+.navbar-visible {
+   transform: translateY(0) !important;
+   opacity: 1 !important;
+  }
+                            
+.navbar {
+   padding-bottom: 0;
+   margin-bottom: 0;
+  }
+                            
+nav a.navbar-brand {
+   font-family: "Fleur De Leah", serif;
+   font-size: 2.2rem;
+  }
+
+/*
 #navbar {
   background-color: #d4907ca2;
-    position: fixed; /* Mantener fijo en la parte superior */
-    top: 0; /* Pegarlo a la parte superior */
-    width: 100%; /* Abarcar todo el ancho de la página */
-    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
-    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out; /* Animaciones suaves para aparecer/desaparecer */
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000; 
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out; 
     margin-top: -10px;
 }
 
@@ -174,10 +204,11 @@ nav a.navbar-brand {
 
 .navbar-hidden {
   display: none;
-  transform: translateY(-100%); /* Mover hacia arriba fuera de la pantalla */
-  opacity: 0; /* Ocultar visualmente */
+  transform: translateY(-100%); 
+  opacity: 0;  Ocultar visualmente 
+  transition: transform 0.3s ease-out;
 }
-
+*/
 
                          /*? Section 1: Rincón Patagónico */
 
@@ -185,7 +216,7 @@ nav a.navbar-brand {
       /*! background mobile*/
 section.s1-rincon-patagonico {
 
-  background-image: url("/assets/images/bgmobile1.png");
+  background-image: url("/assets/images/bgmobile1.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -195,12 +226,12 @@ section.s1-rincon-patagonico {
   justify-content: center; 
   align-items: center; 
   text-align: center; 
-  color: #72433c; /
+  color: #72433c; 
 }
       /*! background desktop*/
    @media (min-width: 768px) {
     section.s1-rincon-patagonico {
-      background-image: url("/assets/images/bgdesktop1.png");
+      background-image: url("/assets/images/bgdesktop1.webp");
 
     }
   }
@@ -232,6 +263,7 @@ p.p-s1-mobile {
   section.s1-rincon-patagonico h2 {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
+  margin-top: 1.5rem;
   }
 }
 
@@ -253,16 +285,20 @@ p.p-s1-mobile {
         align-items: center; 
         text-align: center; 
       }
+
        /*! background desktop*/
-         @media (min-width: 768px) {
-          section.s2-rincon-patagonico {
-            background-image: url("/assets/images/bgdesktop2.png");
-      
-          }
+       @media (min-width: 768px) {
+        section.s2-rincon-patagonico {
+          background-image: url("/assets/images/bgdesktop2.webp");
         }
-         section.s2-rincon-patagonico h2{
-          font-size: 2.5rem;
-         }
+      }
+      section.s2-rincon-patagonico h2{
+        font-size: 2.5rem;
+        margin-top: 1.5rem;
+        color: #55312c
+       }
+
+
        /*! Carrousel imganes de la casa*/
        @media (max-width: 767px) {
         /* Contenedor fijo del carrusel */
@@ -302,5 +338,5 @@ p.p-s1-mobile {
           z-index: 10;
         }
       }
-      
-      
+
+                         /*? Section 3: Donde estamos*/
