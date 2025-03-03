@@ -215,31 +215,69 @@
   
 <!--* Section 3: Dónde estamos -->
   <!--TODO: Cargar maps de la casa -->
-  <section class="py-5" id="donde-estamos">
+  <section class="py-5 s3-donde-estamos" id="donde-estamos">
     <div class="container text-center">
-      <h2>¿Dónde estamos?</h2>
-      <p>Con vehículo podés llegar en...</p>
+      <h2 class="text-center mb-4 playfair-display-title">¿Dónde estamos?</h2>
+  
       <div class="row">
-        <div class="col-md-6 mb-4">
-          <ul>
+        <!-- Columna del Mapa -->
+        <div class="col-md-6">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.7392256745316!2d-71.15513582449559!3d-41.07469252734905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a872474ca3bef%3A0xa5f2d28642804697!2sLos%20Tilos%20%26%20Los%20Pinos%2C%20R8402%20Dina%20Huapi%2C%20R%C3%ADo%20Negro!5e0!3m2!1ses-419!2sar!4v1741040354243!5m2!1ses-419!2sar" 
+              class="embed-responsive-item"
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicación de Casita Anem en Dina Huapi, Patagonia"
+              aria-label="Mapa de la ubicación de Casita Anem">
+            </iframe>
+          </div>
+        </div>
+  
+        <!-- Columna del Texto y Lista -->
+        <div class="col-md-6">
+          <p class="playfair-display p-s3">Con vehículo podés llegar en...</p>
+          <ul class="playfair-display ul-s3">
             <li>4 minutos del Cerro Leones</li>
             <li>8 minutos de la costa del lago Nahuel Huapi</li>
             <li>22 minutos del aeropuerto</li>
             <li>25 minutos del Centro Civico de Bariloche</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+
+ <!-- CODIGO ANTERIOR DE LA SECTION 3, MOD. DEL MAPA
+  <section class="py-5 s3-donde-estamos" id="donde-estamos">
+    <div class="container text-center">
+      <h2 class="text-center mb-4 playfair-display-title">¿Dónde estamos?</h2>
+
+      <div class="row">
         <div class="col-md-6">
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAPS_EMBED_URL"
-                    class="embed-responsive-item"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.7392256745316!2d-71.15513582449559!3d-41.07469252734905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a872474ca3bef%3A0xa5f2d28642804697!2sLos%20Tilos%20%26%20Los%20Pinos%2C%20R8402%20Dina%20Huapi%2C%20R%C3%ADo%20Negro!5e0!3m2!1ses-419!2sar!4v1741040354243!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
+        </div>
+        <p class="playfair-display p-s3" >Con vehículo podés llegar en...</p>
+        <div class="col-md-6 mb-4">
+          <ul class="playfair-display ul-s3" >
+            <li>4 minutos del Cerro Leones</li>
+            <li>8 minutos de la costa del lago Nahuel Huapi</li>
+            <li>22 minutos del aeropuerto</li>
+            <li>25 minutos del Centro Civico de Bariloche</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
+-->
+
+/
 
   <!--* Section 4: Sobre nosotros -->
   <!--TODO: mostrar 3 comentarios cargados en el libro de huspedes-->
