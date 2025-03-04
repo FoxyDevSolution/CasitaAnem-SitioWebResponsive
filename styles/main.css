@@ -363,6 +363,12 @@ p.p-s1-mobile {
         }
       }
 
+      #map {
+        height: 400px; /* Altura del mapa */
+        border-radius: 10px; /* Bordes redondeados */
+        overflow: hidden; /* Para que los bordes redondeados funcionen */
+      }
+
       section.s3-donde-estamos h2{
         font-size: 2.5rem;
         margin-top: 1.5rem;
@@ -370,7 +376,7 @@ p.p-s1-mobile {
       }
 
       section.s3-donde-estamos p.p-s3{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
 
       section.s3-donde-estamos ul.ul-s3{
@@ -378,3 +384,10 @@ p.p-s1-mobile {
         list-style-type: none;
         padding-left: 0; 
       }
+
+      
+    .ul-s3 li.seleccionado {
+      text-decoration: underline; 
+      font-weight: bold; 
+      color: #351c0a; 
+    }

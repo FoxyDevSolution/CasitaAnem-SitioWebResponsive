@@ -8,6 +8,10 @@
   <meta name="keywords" content="alquiler vacacional, cabaña Patagonia, Dina Huapi, Bariloche, turismo Río Negro, Cerro Leones, Lago Nahuel Huapi, alojamiento naturaleza">
   <!--!Título SEO-->
   <title>Casita Anem - Alquiler Vacacional en Dina Huapi, Patagonia</title>
+  <!--! Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!--! Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <!--!Link bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!--!Link Cs-->
@@ -222,23 +226,12 @@
       <div class="row">
         <!-- Columna del Mapa -->
         <div class="col-md-6">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.7392256745316!2d-71.15513582449559!3d-41.07469252734905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a872474ca3bef%3A0xa5f2d28642804697!2sLos%20Tilos%20%26%20Los%20Pinos%2C%20R8402%20Dina%20Huapi%2C%20R%C3%ADo%20Negro!5e0!3m2!1ses-419!2sar!4v1741040354243!5m2!1ses-419!2sar" 
-              class="embed-responsive-item"
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Ubicación de Casita Anem en Dina Huapi, Patagonia"
-              aria-label="Mapa de la ubicación de Casita Anem">
-            </iframe>
-          </div>
+          <div id="map" class="embed-responsive embed-responsive-16by9"></div>
         </div>
   
         <!-- Columna del Texto y Lista -->
         <div class="col-md-6">
-          <p class="playfair-display p-s3">Con vehículo podés llegar en...</p>
+          <p class="playfair-display p-s3">Te dejamos el mapa y algunos sitios de interés<br>¡Descúbrí sus distancias!</p>
           <ul class="playfair-display ul-s3">
             <li>4 minutos del Cerro Leones</li>
             <li>8 minutos de la costa del lago Nahuel Huapi</li>

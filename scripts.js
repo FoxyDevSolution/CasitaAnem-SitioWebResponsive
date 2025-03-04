@@ -108,5 +108,53 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
-  
-  
+
+
+//! Mapa Section 3 con Leaflet
+document.addEventListener("DOMContentLoaded", () => {
+  const casitaAnem = [-41.074722, -71.152583];
+
+  const map = L.map("map").setView(casitaAnem, 14); 
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  L.marker(casitaAnem).addTo(map).bindPopup("Casita Anem").openPopup();
+
+  const puntosInteres = [
+    { nombre: "Cerro Leones", coords: [-41.079361, -71.143472] },
+    { nombre: "Costa del Lago Nahuel Huapi", coords: [-41.068722, -71.165833] },
+    { nombre: "Aeropuerto", coords: [-41.145806, -71.161389] },
+    { nombre: "Centro Cívico de Bariloche", coords: [-41.133500, -71.310111] },
+  ];
+
+  let rutaActual = null;
+
+  let itemSeleccionado = null;
+
+  const listaItems = document.querySelectorAll(".ul-s3 li");
+  listaItems.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      const punto = puntosInteres[index];
+
+      map.setView(punto.coords, 14);
+
+      L.marker(punto.coords).addTo(map).bindPopup(punto.nombre).openPopup();
+
+      if (rutaActual) {
+        map.removeLayer(rutaActual);
+      }
+
+      rutaActual = L.polyline([casitaAnem, punto.coords], { color: "blue" }).addTo(map);
+
+      if (itemSeleccionado) {
+        itemSeleccionado.classList.remove("seleccionado");
+      }
+
+      item.classList.add("seleccionado");
+
+      itemSeleccionado = item;
+    });
+  });
+});
