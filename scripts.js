@@ -158,3 +158,136 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+//! Comentarios Section 4/5 con Firebase
+// Inicialización de Firebase y Firestore
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC7dhE0OF2Y_cSiNVp2aRCovQDJDHB-UMM",
+  authDomain: "casita-anem.firebaseapp.com",
+  projectId: "casita-anem",
+  storageBucket: "casita-anem.firebasestorage.app",
+  messagingSenderId: "494050866177",
+  appId: "1:494050866177:web:3805efbb7e75624e48bc00",
+  measurementId: "G-N9BCM46VN5"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Definimos la colección en la que se almacenarán los comentarios
+const comentariosCollection = collection(db, "comentarios");
+function loadComentarios() {
+  onSnapshot(comentariosCollection, (snapshot) => {
+    let htmlDesktop = "";
+    let htmlMobile = "";
+    let first = true; // para marcar el primer slide como activo
+
+    snapshot.forEach(doc => {
+      const data = doc.data();
+
+      // Generamos HTML para la versión desktop (lista)
+      htmlDesktop += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+
+      // Generamos HTML para la versión mobile (carrusel)
+      htmlMobile += `
+        <div class="carousel-item ${first ? "active" : ""}">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </div>
+      `;
+      first = false;
+    });
+
+    // Actualizamos los contenedores desktop
+    const contenedorSec4 = document.getElementById("comentarios-lista-section4");
+    const contenedorSec5 = document.getElementById("comentarios-lista-section5");
+    if (contenedorSec4) contenedorSec4.innerHTML = htmlDesktop;
+    if (contenedorSec5) contenedorSec5.innerHTML = htmlDesktop;
+
+    // Actualizamos el carrusel en mobile
+    const carouselInner = document.querySelector("#carouselComentarios .carousel-inner");
+    if (carouselInner) {
+      carouselInner.innerHTML = htmlMobile;
+      // Si es necesario, podrías reinicializar el carrusel o forzar la actualización,
+      // pero en muchos casos solo actualizar el innerHTML es suficiente.
+    }
+  });
+}
+
+/* // Función para actualizar los comentarios en ambas secciones - MODIFICACION PARA VERSION MOBILE
+function loadComentarios() {
+  onSnapshot(comentariosCollection, (snapshot) => {
+    let html = "";
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      html += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+    });
+    // Actualizamos los contenedores de comentarios en sección 4 y 5
+    const contenedorSec4 = document.getElementById("comentarios-lista-section4");
+    const contenedorSec5 = document.getElementById("comentarios-lista-section5");
+    if (contenedorSec4) contenedorSec4.innerHTML = html;
+    if (contenedorSec5) contenedorSec5.innerHTML = html;
+  });
+}
+*/ 
+
+
+// Llamamos a la función para empezar a escuchar los cambios
+loadComentarios();
+
+// Función para enviar un comentario a Firestore
+async function submitComentario(nombre, comentario) {
+  try {
+    await addDoc(comentariosCollection, {
+      nombre: nombre,
+      comentario: comentario,
+      timestamp: Date.now()
+    });
+    console.log("Comentario agregado");
+  } catch (error) {
+    console.error("Error al agregar comentario:", error);
+  }
+}
+
+// Agregar listener al formulario de desktop
+const formDesktop = document.getElementById("form-comentario-desktop");
+if (formDesktop) {
+  formDesktop.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById("nombre-apellido-huesped-desktop").value;
+    const comentario = document.getElementById("comentario-huesped-desktop").value;
+    submitComentario(nombre, comentario);
+    formDesktop.reset();
+  });
+}
+
+// Agregar listener al formulario de mobile (si lo usas)
+const formMobile = document.getElementById("form-comentario-mobile");
+if (formMobile) {
+  formMobile.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById("nombre-apellido-huesped-mobile").value;
+    const comentario = document.getElementById("comentario-huesped-mobile").value;
+    submitComentario(nombre, comentario);
+    formMobile.reset();
+  });
+}

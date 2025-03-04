@@ -95,14 +95,14 @@ header.section-header{
 
 @media (min-width: 768px) {
   header.section-header {
-    background-image: url("../assets/images/gbdesktop-header-anem.webp"); /* Fondo desktop */
+    background-image: url("../assets/images/gbdesktop-header-anem.webp");
   }
 }
 
   /** Estilo del título principal **/
 header.section-header h2 {
   font-family: "Playfair Display", serif;
-  font-size: 1.5rem; /* Tamaño del texto (mobile) */
+  font-size: 1.5rem; 
   margin-bottom: 1rem;
 }
 
@@ -141,12 +141,12 @@ header.section-header .header-p {
 
   /** Estilo del botón **/
 header.section-header .btn-conocenos {
-  background-color: #9d5b44; /* Color del botón */
+  background-color: #9d5b44; 
   border: none;
   color: #fff;
-  font-size: 1.1rem; /* Tamaño de texto */
-  padding: 0.75rem 1.5rem; /* Espaciado interno */
-  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1.1rem; 
+  padding: 0.75rem 1.5rem; 
+  border-radius: 5px; 
   transition: background-color 0.3s ease;
 }
 header.section-header .btn-conocenos:hover {
@@ -301,20 +301,18 @@ p.p-s1-mobile {
 
        /*! Carrousel imganes de la casa*/
        @media (max-width: 767px) {
-        /* Contenedor fijo del carrusel */
+ 
         #casaCarousel {
           height: 450px;
           overflow: hidden;
           position: relative;
         }
       
-        /* Cada ítem del carrusel mantiene la altura fija */
         #casaCarousel .carousel-item {
           height: 450px;
-          position: relative; /* Para posicionar el caption dentro */
+          position: relative; 
         }
-      
-        /* La imagen ocupa todo el contenedor */
+    
         #casaCarousel .carousel-item img {
           height: 100%;
           width: 100%;
@@ -323,7 +321,6 @@ p.p-s1-mobile {
           display: block;
         }
       
-        /* El caption se superpone en la parte inferior */
         #casaCarousel .carousel-item p {
           position: absolute;
           bottom: 0;
@@ -331,7 +328,7 @@ p.p-s1-mobile {
           width: 100%;
           margin: 0;
           padding: 0.5rem;
-          background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente para mayor legibilidad */
+          background-color: rgba(0, 0, 0, 0.6);
           color: #fff;
           text-align: center;
           font-size: 1rem;
@@ -362,23 +359,23 @@ p.p-s1-mobile {
           background-image: url("../assets/images/bgdesktop1.webp");
         }
       }
-
+  /**Estilos del mapa Section 3*/
       #map {
-        height: 400px; /* Altura del mapa */
-        border-radius: 10px; /* Bordes redondeados */
-        overflow: hidden; /* Para que los bordes redondeados funcionen */
+        height: 400px; 
+        border-radius: 10px; 
+        overflow: hidden; 
       }
-
+    /**Estilos h2 section 3*/
       section.s3-donde-estamos h2{
         font-size: 2.5rem;
         margin-top: 1.5rem;
         color: #55312c
       }
-
+    /**Estilos p section 3*/
       section.s3-donde-estamos p.p-s3{
         font-size: 1.4rem;
       }
-
+    /**Estilos de la lista section 3*/ 
       section.s3-donde-estamos ul.ul-s3{
         font-size: 1.2rem;
         list-style-type: none;
@@ -394,3 +391,38 @@ p.p-s1-mobile {
       font-weight: bold; 
       color: #351c0a; 
     }
+
+                        /*? Section 4: Sobre Nosotros*/
+
+  /**Background section 4*/
+        /*! background mobile*/
+        section.s4-sobre-nosotros {
+
+          background-image: url("../assets/images/bgmobile2.webp");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          min-height: 100vh; 
+          display: flex;
+          flex-direction: column; 
+          justify-content: center; 
+          align-items: center; 
+          text-align: center; 
+        }
+  
+         /*! background desktop*/
+         @media (min-width: 768px) {
+          section.s4-sobre-nosotros {
+            background-image: url("../assets/images/bgdesktop2.webp");
+          }
+        }
+  /**Estilo h2 section 4*/
+        section.s4-sobre-nosotros h2{
+          font-size: 2.5rem;
+          margin-top: 30px;
+          color: #55312c
+        }
+  /**Estilo p section 4*/
+        section.s4-sobre-nosotros p{
+          font-size: 1.5rem;
+        }

@@ -244,21 +244,22 @@
 
   <!--* Section 4: Sobre nosotros -->
   <!--TODO: mostrar 3 comentarios cargados en el libro de huspedes-->
-  <section class="bg-light py-5" id="sobre-nosotros">
+  <!--TODO: YA CARGUE Firebase para backend, FALTA EL JS Y CSS DE LA SECTION 4 Y 5 -->
+  <section class="bg-light py-5 s4-sobre-nosotros" id="sobre-nosotros">
     <div class="container">
-      <h2 class="text-center mb-4">Sobre nosotros</h2>
+      <h2 class="text-center mb-4 playfair-display-title">Sobre nosotros</h2>
   
       <!--? Contenido común para ambas versiones -->
-      <p class="text-center">
-        Somos una familia nacida y criada en Bariloche, rodeados de lagos y montañas. <br>
-        Amamos la naturaleza y nuestra tierra, y queremos compartir nuestro hogar con nuestros huéspedes. <br>
-        Buscamos que su estadía sea inolvidable y que sientan la magia de la Patagonia. <br>
-        Nos esforzamos para que se sientan cómodos y bienvenidos.
-      </p>
+      <p class="text-center playfair-display">
+          Somos una familia de Bariloche, apasionados por la naturaleza y nuestra tierra. <br>
+          En Casita Anem, queremos que te sientas como en casa, rodeado de la magia de la Patagonia. <br>
+          Nuestro objetivo es que tu estadía sea inolvidable, llena de tranquilidad y momentos especiales. <br>
+          ¡Te esperamos con los brazos abiertos!
+        </p>
   
       <!--* Botón para móvil que enlaza a la sección 5 -->
       <div class="text-center d-md-none mt-4">
-        <a href="#experiencias-huespedes" class="btn btn-primary">Nuestros Huéspedes</a>
+        <a href="#experiencias-huespedes" class="btn btn-primary">Conoce experiencias de huéspedes</a>
       </div>
   
       <!--! Versión Desktop -->
@@ -268,6 +269,12 @@
         </div>
   
         <!--! Reseñas -->
+        <div class="col-md-12">
+          <ul id="comentarios-lista-section4" class="list-unstyled"></ul>
+        </div>
+
+
+       <!-- CODIO DE RESEÑAS MODIFICADO PARA INSERTAR COMENTARIOS CON JS
         <div class="col-md-4 mb-4">
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
           <p><strong>Primer nombre</strong></p>
@@ -280,10 +287,10 @@
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
           <p><strong>Tercer nombre</strong></p>
         </div>
-  
+        -->
         <!--? Botón para dejar opinión -->
         <div class="text-center mt-4">
-          <button class="btn btn-primary">Deja tu opinión</button>
+          <a href="#experiencias-huespedes" class="btn btn-primary">Conoce experiencias de huéspedes</a>
         </div>
       </div>
     </div>
@@ -297,7 +304,7 @@
   <div class="container">
     <h2 class="text-center mb-4">Experiencias de nuestros visitantes</h2>
 
-    <!-- Versión móvil: Carrusel de comentarios -->
+    <!--! Versión móvil: Carrusel de comentarios -->
     <div id="carouselComentarios" class="carousel slide d-md-none mb-4" data-bs-ride="carousel">
       <div class="carousel-inner">
         <!-- Comentario 1 -->
@@ -377,20 +384,7 @@
 
       <!-- Columna derecha: Lista de comentarios -->
       <div class="col-md-6">
-        <ul id="comentarios-lista" class="list-unstyled">
-          <li class="mb-3">
-            <div class="card p-3">
-              <strong>Juan Pérez</strong>
-              <p>¡Estuvimos de maravilla! La vista desde la casa es increíble. Volveremos sin duda.</p>
-            </div>
-          </li>
-          <li class="mb-3">
-            <div class="card p-3">
-              <strong>Maria Gómez</strong>
-              <p>Un lugar hermoso para desconectar. Todo muy limpio y cómodo. Altamente recomendado.</p>
-            </div>
-          </li>
-        </ul>
+        <ul id="comentarios-lista-section5" class="list-unstyled"></ul>
       </div>
     </div>
   </div>
@@ -492,7 +486,7 @@
 <!--!Script bootstrap!-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!--!Script propios!-->
-  <script src="scripts.js"></script>
+<script type="module" src="scripts.js"></script>
   <!--!Script title-->
   <script>
     const titulos = [
@@ -512,5 +506,24 @@
 
     setInterval(rotarTitulo, 2500);
   </script>
+  <!--!Script Firebase para backend
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyC7dhE0OF2Y_cSiNVp2aRCovQDJDHB-UMM",
+      authDomain: "casita-anem.firebaseapp.com",
+      projectId: "casita-anem",
+      storageBucket: "casita-anem.firebasestorage.app",
+      messagingSenderId: "494050866177",
+      appId: "1:494050866177:web:3805efbb7e75624e48bc00",
+      measurementId: "G-N9BCM46VN5"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app); 
+  </script>
+  -->
 </body>
 </html>
