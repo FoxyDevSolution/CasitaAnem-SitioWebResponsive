@@ -71,7 +71,7 @@
 
   /**background header mobile*/
 header.section-header{
-  background-image: url("/assets/images/bgmobile-header-anem.webp");
+  background-image: url("../assets/images/bgmobile-header-anem.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -88,14 +88,14 @@ header.section-header{
      /*! background desktop*/
    @media (min-width: 768px) {
     .section {
-      background-image: url("assets/images/gbdesktop-header-anem.png");
+      background-image: url("../assets/images/gbdesktop-header-anem.png");
     }
   }
 
 
 @media (min-width: 768px) {
   header.section-header {
-    background-image: url("/assets/images/gbdesktop-header-anem.webp"); /* Fondo desktop */
+    background-image: url("../assets/images/gbdesktop-header-anem.webp"); /* Fondo desktop */
   }
 }
 
@@ -216,7 +216,7 @@ nav a.navbar-brand {
       /*! background mobile*/
 section.s1-rincon-patagonico {
 
-  background-image: url("/assets/images/bgmobile1.webp");
+  background-image: url("../assets/images/bgmobile1.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -231,7 +231,7 @@ section.s1-rincon-patagonico {
       /*! background desktop*/
    @media (min-width: 768px) {
     section.s1-rincon-patagonico {
-      background-image: url("/assets/images/bgdesktop1.webp");
+      background-image: url("../assets/images/bgdesktop1.webp");
 
     }
   }
@@ -289,7 +289,7 @@ p.p-s1-mobile {
        /*! background desktop*/
        @media (min-width: 768px) {
         section.s2-rincon-patagonico {
-          background-image: url("/assets/images/bgdesktop2.webp");
+          background-image: url("../assets/images/bgdesktop2.webp");
         }
       }
       section.s2-rincon-patagonico h2{
@@ -344,7 +344,7 @@ p.p-s1-mobile {
       /*! background mobile*/
       section.s3-donde-estamos {
 
-        background-image: url("/assets/images/bgmobile1.webp");
+        background-image: url("../assets/images/bgmobile1.webp");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -359,7 +359,7 @@ p.p-s1-mobile {
        /*! background desktop*/
        @media (min-width: 768px) {
         section.s3-donde-estamos {
-          background-image: url("/assets/images/bgdesktop1.webp");
+          background-image: url("../assets/images/bgdesktop1.webp");
         }
       }
 
@@ -385,7 +385,10 @@ p.p-s1-mobile {
         padding-left: 0; 
       }
 
-      
+    .ul-s3 li {
+      transition: all 0.3s ease;
+    }
+
     .ul-s3 li.seleccionado {
       text-decoration: underline; 
       font-weight: bold; 

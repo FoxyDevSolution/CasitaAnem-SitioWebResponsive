@@ -20,6 +20,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <!--!Link FontAwesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <!--TODO: hacer un boton que suba hacia arriba de toda la pag? quizas abajo a a la derecha-->
 <!--///TODO: Revisar rutas de las imagenes, algunas estan usando rutas que van a la raiz del servidor, mejor usar rutas relativas -->
@@ -218,59 +220,27 @@
   </section>
   
 <!--* Section 3: Dónde estamos -->
-  <!--TODO: Cargar maps de la casa -->
   <section class="py-5 s3-donde-estamos" id="donde-estamos">
     <div class="container text-center">
       <h2 class="text-center mb-4 playfair-display-title">¿Dónde estamos?</h2>
   
       <div class="row">
-        <!-- Columna del Mapa -->
         <div class="col-md-6">
           <div id="map" class="embed-responsive embed-responsive-16by9"></div>
         </div>
   
-        <!-- Columna del Texto y Lista -->
         <div class="col-md-6">
           <p class="playfair-display p-s3">Te dejamos el mapa y algunos sitios de interés<br>¡Descúbrí sus distancias!</p>
           <ul class="playfair-display ul-s3">
-            <li>4 minutos del Cerro Leones</li>
-            <li>8 minutos de la costa del lago Nahuel Huapi</li>
-            <li>22 minutos del aeropuerto</li>
-            <li>25 minutos del Centro Civico de Bariloche</li>
+            <li><i class="fas fa-mountain"></i> 4 minutos del Cerro Leones</li>
+            <li><i class="fas fa-water"></i> 8 minutos de la costa del lago Nahuel Huapi</li>
+            <li><i class="fas fa-plane"></i> 22 minutos del aeropuerto</li>
+            <li><i class="fas fa-building"></i> 25 minutos del Centro Civico de Bariloche</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
-
-
-
- <!-- CODIGO ANTERIOR DE LA SECTION 3, MOD. DEL MAPA
-  <section class="py-5 s3-donde-estamos" id="donde-estamos">
-    <div class="container text-center">
-      <h2 class="text-center mb-4 playfair-display-title">¿Dónde estamos?</h2>
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.7392256745316!2d-71.15513582449559!3d-41.07469252734905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a872474ca3bef%3A0xa5f2d28642804697!2sLos%20Tilos%20%26%20Los%20Pinos%2C%20R8402%20Dina%20Huapi%2C%20R%C3%ADo%20Negro!5e0!3m2!1ses-419!2sar!4v1741040354243!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-        <p class="playfair-display p-s3" >Con vehículo podés llegar en...</p>
-        <div class="col-md-6 mb-4">
-          <ul class="playfair-display ul-s3" >
-            <li>4 minutos del Cerro Leones</li>
-            <li>8 minutos de la costa del lago Nahuel Huapi</li>
-            <li>22 minutos del aeropuerto</li>
-            <li>25 minutos del Centro Civico de Bariloche</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
--->
-
-/
 
   <!--* Section 4: Sobre nosotros -->
   <!--TODO: mostrar 3 comentarios cargados en el libro de huspedes-->
