@@ -426,3 +426,15 @@ p.p-s1-mobile {
         section.s4-sobre-nosotros p{
           font-size: 1.5rem;
         }
+
+                                /*? Section 5: Experiencias Huespedes*/
+
+  /**Scroll y altura comentarios section 5 desktop*/
+       @media (min-width: 768px) {
+        #comentarios-lista-section5 {
+        max-height: 500px;
+        overflow-y: auto;
+        padding-right: 10px; 
+      }
+  }
+  

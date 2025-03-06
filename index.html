@@ -243,8 +243,7 @@
   </section>
 
   <!--* Section 4: Sobre nosotros -->
-  <!--TODO: mostrar 3 comentarios cargados en el libro de huspedes-->
-  <!--TODO: YA CARGUE Firebase para backend, FALTA EL JS Y CSS DE LA SECTION 4 Y 5 -->
+  <!--TODO: Terminar de ver el CSS de las cards de comentarios-->
   <section class="bg-light py-5 s4-sobre-nosotros" id="sobre-nosotros">
     <div class="container">
       <h2 class="text-center mb-4 playfair-display-title">Sobre nosotros</h2>
@@ -273,21 +272,6 @@
           <ul id="comentarios-lista-section4" class="list-unstyled"></ul>
         </div>
 
-
-       <!-- CODIO DE RESEÑAS MODIFICADO PARA INSERTAR COMENTARIOS CON JS
-        <div class="col-md-4 mb-4">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
-          <p><strong>Primer nombre</strong></p>
-        </div>
-        <div class="col-md-4 mb-4">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
-          <p><strong>Segundo nombre</strong></p>
-        </div>
-        <div class="col-md-4 mb-4">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro consequuntur neque ducimus maiores distinctio repudiandae exercitationem ex, deleniti praesentium totam?</p>
-          <p><strong>Tercer nombre</strong></p>
-        </div>
-        -->
         <!--? Botón para dejar opinión -->
         <div class="text-center mt-4">
           <a href="#experiencias-huespedes" class="btn btn-primary">Conoce experiencias de huéspedes</a>
@@ -298,8 +282,6 @@
 
 
  <!--* Section 5: Experiencias huespedes -->
-  <!--TODO: Desarrollar el algoritmo para captar el comentario de formulario y mostrarlo en la lista de comentarios-->
- <!--TODO: Al haber dos formularios con ID diferentes, complica el manejo de envios? Creo que es mejor usar clases responsivas en un unico formulario.-->
  <section class="bg-light py-5" id="experiencias-huespedes">
   <div class="container">
     <h2 class="text-center mb-4">Experiencias de nuestros visitantes</h2>
@@ -307,7 +289,7 @@
     <!--! Versión móvil: Carrusel de comentarios -->
     <div id="carouselComentarios" class="carousel slide d-md-none mb-4" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <!-- Comentario 1 -->
+        <!-- Comentarios de ejemplo -->
         <div class="carousel-item active">
           <div class="card p-3">
             <strong>Juan Pérez</strong>
@@ -321,7 +303,6 @@
             <p>Un lugar hermoso para desconectar. Todo muy limpio y cómodo. Altamente recomendado.</p>
           </div>
         </div>
-        <!-- Más comentarios se pueden agregar aquí -->
       </div>
       <!-- Controles del carrusel -->
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselComentarios" data-bs-slide="prev">
@@ -349,7 +330,8 @@
           <label for="comentario-huesped-mobile" class="form-label">Contanos tu experiencia!</label>
           <textarea class="form-control" id="comentario-huesped-mobile" rows="3" required placeholder="Escribe tu comentario aquí"></textarea>
         </div>
-
+        <!-- Div. de alerta de envio de comentarios -->
+        <div id="alert-comentario-mobile"></div>
         <!-- Botón para enviar -->
         <div class="mb-3">
           <button type="submit" class="btn btn-primary w-100">Enviar</button>
@@ -374,7 +356,8 @@
             <label for="comentario-huesped-desktop" class="form-label">Contanos tu experiencia!</label>
             <textarea class="form-control" id="comentario-huesped-desktop" rows="3" required placeholder="Escribe tu comentario aquí"></textarea>
           </div>
-
+           <!-- Div. de alerta de envio de comentarios -->
+           <div id="alert-comentario-desktop"></div>
           <!-- Botón para enviar -->
           <div class="mb-3">
             <button type="submit" class="btn btn-primary w-100">Enviar</button>

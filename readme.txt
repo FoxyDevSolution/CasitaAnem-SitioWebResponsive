@@ -9,25 +9,6 @@ Section 6: "Contacto y reservas"
 Footer: sobre la página
 
 
-**Pasos a Seguir:**
-
-1. **Corregir Errores:** Arreglar rutas de imágenes, CSS con errores, y placeholders (como el mapa).
-
-2. **Optimizar:** Imágenes, fuentes, y código (minificación).
-
-3. **Mejorar Accesibilidad:** Textos alternativos, contraste de colores, y semántica HTML.
-
-4. **Unificar Estilos:** Asegurar consistencia en fuentes, tamaños, y colores.
-
-5. **Testear:** En diferentes navegadores y dispositivos para garantizar compatibilidad.
-
-
-
-
-
-
-
-
 
 Codigo Alternativo HTML: 
 <!--! section 1 Version only desktop
@@ -172,3 +153,651 @@ Codigo Alternativo HTML:
 </section>
 -->
 
+Codigos alternativos de Javascript: 
+/*
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("navbar");
+    const header = document.getElementById("header-anem");
+    const headerHeight = header.offsetHeight;
+
+    // Función para actualizar la visibilidad del navbar
+    const updateNavbarVisibility = () => {
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition >= headerHeight) {
+            navbar.classList.remove("navbar-hidden"); // Mostrar el navbar
+        } else {
+            navbar.classList.add("navbar-hidden"); // Ocultar el navbar
+        }
+    };
+
+    // Actualizar navbar inmediatamente al cargar la página
+    updateNavbarVisibility();
+
+    // Escuchar el evento scroll para seguir actualizando la visibilidad
+    window.addEventListener("scroll", updateNavbarVisibility);
+});
+*/
+
+
+/* MODIFICACION DE LA FUNCION LOADCOMENTARIOS PARA MEJOR FUNCIONAMIENTO EN VERSION MOBILE 
+function loadComentarios() {
+  onSnapshot(comentariosCollection, (snapshot) => {
+    let htmlDesktopSection4 = ""; // HTML para la sección 4 (últimos 3 comentarios)
+    let htmlDesktopSection5 = ""; // HTML para la sección 5 (resto de comentarios)
+    let htmlMobile = ""; // HTML para el carrusel móvil
+    let first = true; // para marcar el primer slide como activo
+
+    // Convertir los comentarios a un array
+    const comentarios = [];
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      comentarios.push({ nombre: data.nombre, comentario: data.comentario });
+    });
+
+    // Obtener los últimos 3 comentarios
+    const ultimosComentarios = comentarios.slice(-3);
+    ultimosComentarios.forEach((data) => {
+      // HTML para la sección 4 (últimos 3 comentarios)
+      htmlDesktopSection4 += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+
+      // HTML para el carrusel móvil (últimos 3 comentarios)
+      htmlMobile += `
+        <div class="carousel-item ${first ? "active" : ""}">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </div>
+      `;
+      first = false;
+    });
+
+    // Obtener el resto de los comentarios (todos excepto los últimos 3)
+    const restoComentarios = comentarios.slice(0, -3);
+    restoComentarios.forEach((data) => {
+      // HTML para la sección 5 (resto de comentarios)
+      htmlDesktopSection5 += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+    });
+
+    // Actualizar los contenedores
+    const contenedorSec4 = document.getElementById("comentarios-lista-section4");
+    const contenedorSec5 = document.getElementById("comentarios-lista-section5");
+    const carouselInner = document.querySelector("#carouselComentarios .carousel-inner");
+
+    if (contenedorSec4) contenedorSec4.innerHTML = htmlDesktopSection4;
+    if (contenedorSec5) contenedorSec5.innerHTML = htmlDesktopSection5;
+    if (carouselInner) carouselInner.innerHTML = htmlMobile;
+  });
+}
+*/
+
+/* MODIFICACION DE LA FUNCION LOADCOMENTARIOS PARA MOSTRAR 3 EN LA SECTION 4
+function loadComentarios() {
+  onSnapshot(comentariosCollection, (snapshot) => {
+    let htmlDesktopSection4 = ""; // HTML para la sección 4 (últimos 3 comentarios)
+    let htmlDesktopSection5 = ""; // HTML para la sección 5 (resto de comentarios)
+    let htmlMobile = ""; // HTML para el carrusel móvil
+    let first = true; // para marcar el primer slide como activo
+
+
+  /// MODIFICACION DEL CODIGO PARA MOSTRAR 3 COMENT. EN LA SECTION 4
+
+  onSnapshot(comentariosCollection, (snapshot) => {
+    let htmlDesktop = "";
+    let htmlMobile = "";
+    let first = true; // para marcar el primer slide como activo
+
+
+
+    snapshot.forEach(doc => {
+      const data = doc.data();
+
+      // Generamos HTML para la versión desktop (lista)
+      htmlDesktop += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+
+      // Generamos HTML para la versión mobile (carrusel)
+      htmlMobile += `
+        <div class="carousel-item ${first ? "active" : ""}">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </div>
+      `;
+      first = false;
+    });
+
+    // Actualizamos los contenedores desktop
+    const contenedorSec4 = document.getElementById("comentarios-lista-section4");
+    const contenedorSec5 = document.getElementById("comentarios-lista-section5");
+    if (contenedorSec4) contenedorSec4.innerHTML = htmlDesktop;
+    if (contenedorSec5) contenedorSec5.innerHTML = htmlDesktop;
+
+    // Actualizamos el carrusel en mobile
+    const carouselInner = document.querySelector("#carouselComentarios .carousel-inner");
+    if (carouselInner) {
+      carouselInner.innerHTML = htmlMobile;
+      // Si es necesario, podrías reinicializar el carrusel o forzar la actualización,
+      // pero en muchos casos solo actualizar el innerHTML es suficiente.
+    }
+  });
+}
+*/ 
+
+/* // Función para actualizar los comentarios en ambas secciones - MODIFICACION PARA VERSION MOBILE
+function loadComentarios() {
+  onSnapshot(comentariosCollection, (snapshot) => {
+    let html = "";
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      html += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+    });
+    // Actualizamos los contenedores de comentarios en sección 4 y 5
+    const contenedorSec4 = document.getElementById("comentarios-lista-section4");
+    const contenedorSec5 = document.getElementById("comentarios-lista-section5");
+    if (contenedorSec4) contenedorSec4.innerHTML = html;
+    if (contenedorSec5) contenedorSec5.innerHTML = html;
+  });
+}
+*/ 
+/*
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("navbar");
+    const sections = document.querySelectorAll("section"); // Todas las secciones
+
+    const updateNavbarVisibility = () => {
+        let navbarVisible = false;
+
+        sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                navbarVisible = true;
+            }
+        });
+
+        if (navbarVisible) {
+            navbar.classList.remove("navbar-hidden"); // Mostrar navbar
+        } else {
+            navbar.classList.add("navbar-hidden"); // Ocultar navbar
+        }
+    };
+
+    window.addEventListener("scroll", updateNavbarVisibility);
+    updateNavbarVisibility(); // Ejecutar al inicio
+});
+*/
+
+/* MODIFICACION DE LA FUNCION LOADCOMENTARIOS PARA MOBILE
+
+function loadComentarios() {
+  onSnapshot(comentariosCollection, (snapshot) => {
+    let htmlDesktopSection4 = ""; // HTML para la sección 4 (últimos 3 comentarios)
+    let htmlDesktopSection5 = ""; // HTML para la sección 5 (resto de comentarios)
+    let htmlMobile = ""; // HTML para el carrusel móvil (todos los comentarios)
+    let first = true; // para marcar el primer slide como activo
+
+    // Convertir los comentarios a un array
+    const comentarios = [];
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      comentarios.push({
+        nombre: data.nombre,
+        comentario: data.comentario,
+        timestamp: data.timestamp // Aunque no lo usemos para ordenar, lo mantenemos
+      });
+    });
+
+    // Ordenar los comentarios por nombre (alfabéticamente)
+    comentarios.sort((a, b) => {
+      const nombreA = a.nombre.toUpperCase(); // Convertir a mayúsculas para evitar problemas de case sensitivity
+      const nombreB = b.nombre.toUpperCase();
+      if (nombreA < nombreB) return -1; // A va antes que B
+      if (nombreA > nombreB) return 1;  // A va después que B
+      return 0; // Son iguales
+    });
+
+    // Obtener los últimos 3 comentarios (alfabéticamente)
+    const ultimosComentarios = comentarios.slice(0, 3); // Cambiamos a slice(0, 3) para los primeros 3
+    ultimosComentarios.forEach((data) => {
+      // HTML para la sección 4 (últimos 3 comentarios)
+      htmlDesktopSection4 += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+    });
+
+    // Obtener el resto de los comentarios (alfabéticamente)
+    const restoComentarios = comentarios.slice(3); // Cambiamos a slice(3) para el resto
+    restoComentarios.forEach((data) => {
+      // HTML para la sección 5 (resto de comentarios)
+      htmlDesktopSection5 += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+
+      // HTML para el carrusel móvil (todos los comentarios)
+      htmlMobile += `
+        <div class="carousel-item ${first ? "active" : ""}">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </div>
+      `;
+      first = false;
+    });
+
+    // Actualizar los contenedores
+    const contenedorSec4 = document.getElementById("comentarios-lista-section4");
+    const contenedorSec5 = document.getElementById("comentarios-lista-section5");
+    const carouselInner = document.querySelector("#carouselComentarios .carousel-inner");
+
+    if (contenedorSec4) contenedorSec4.innerHTML = htmlDesktopSection4; // Solo en desktop
+    if (contenedorSec5) contenedorSec5.innerHTML = htmlDesktopSection5; // Solo en desktop
+    if (carouselInner) carouselInner.innerHTML = htmlMobile; // Solo en mobile
+  });
+}
+*/
+
+//Funcion Loadcomentarios
+/* modificacion de la funcion loadcomentarios por que no funciona ordenar por timestamp
+function loadComentarios() {
+  onSnapshot(comentariosCollection, (snapshot) => {
+    let htmlDesktopSection4 = ""; // HTML para la sección 4 (últimos 3 comentarios)
+    let htmlDesktopSection5 = ""; // HTML para la sección 5 (resto de comentarios)
+    let htmlMobile = ""; // HTML para el carrusel móvil (todos los comentarios)
+    let first = true; // para marcar el primer slide como activo
+
+    // Convertir los comentarios a un array
+    const comentarios = [];
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      comentarios.push({
+        nombre: data.nombre,
+        comentario: data.comentario,
+        timestamp: data.timestamp // Asegúrate de que el campo "timestamp" esté presente
+      });
+    });
+
+    // Ordenar los comentarios por fecha (de más reciente a más antiguo)
+    comentarios.sort((a, b) => b.timestamp.toMillis() - a.timestamp.toMillis());
+
+    // Obtener los últimos 3 comentarios (más recientes)
+    const ultimosComentarios = comentarios.slice(0, 3); // Cambiamos a slice(0, 3) para los más recientes
+    ultimosComentarios.forEach((data) => {
+      // HTML para la sección 4 (últimos 3 comentarios)
+      htmlDesktopSection4 += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+    });
+
+    // Obtener el resto de los comentarios (más antiguos)
+    const restoComentarios = comentarios.slice(3); // Cambiamos a slice(3) para el resto
+    restoComentarios.forEach((data) => {
+      // HTML para la sección 5 (resto de comentarios)
+      htmlDesktopSection5 += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+
+      // HTML para el carrusel móvil (todos los comentarios)
+      htmlMobile += `
+        <div class="carousel-item ${first ? "active" : ""}">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </div>
+      `;
+      first = false;
+    });
+
+    // Actualizar los contenedores
+    const contenedorSec4 = document.getElementById("comentarios-lista-section4");
+    const contenedorSec5 = document.getElementById("comentarios-lista-section5");
+    const carouselInner = document.querySelector("#carouselComentarios .carousel-inner");
+
+    if (contenedorSec4) contenedorSec4.innerHTML = htmlDesktopSection4; // Solo en desktop
+    if (contenedorSec5) contenedorSec5.innerHTML = htmlDesktopSection5; // Solo en desktop
+    if (carouselInner) carouselInner.innerHTML = htmlMobile; // Solo en mobile
+  });
+}
+*/
+/* MODIFICACION DE LA FUNCION LOADCOMENTARIOS PARA USAR TIMESTAMP
+function loadComentarios() {
+  onSnapshot(comentariosCollection, (snapshot) => {
+    let htmlDesktopSection4 = ""; // HTML para la sección 4 (últimos 3 comentarios)
+    let htmlDesktopSection5 = ""; // HTML para la sección 5 (resto de comentarios)
+    let htmlMobile = ""; // HTML para el carrusel móvil (todos los comentarios)
+    let first = true; // para marcar el primer slide como activo
+
+    // Convertir los comentarios a un array
+    const comentarios = [];
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      comentarios.push({ nombre: data.nombre, comentario: data.comentario });
+    });
+
+    // Ordenar los comentarios de más reciente a más antiguo
+    comentarios.sort((a, b) => b.fecha - a.fecha); // Asegúrate de tener un campo "fecha" en Firestore
+
+    // Obtener los últimos 3 comentarios (más recientes)
+    const ultimosComentarios = comentarios.slice(0, 3); // Cambiamos a slice(0, 3) para los más recientes
+    ultimosComentarios.forEach((data) => {
+      // HTML para la sección 4 (últimos 3 comentarios)
+      htmlDesktopSection4 += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+    });
+
+    // Obtener el resto de los comentarios (más antiguos)
+    const restoComentarios = comentarios.slice(3); // Cambiamos a slice(3) para el resto
+    restoComentarios.forEach((data) => {
+      // HTML para la sección 5 (resto de comentarios)
+      htmlDesktopSection5 += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+
+      // HTML para el carrusel móvil (todos los comentarios)
+      htmlMobile += `
+        <div class="carousel-item ${first ? "active" : ""}">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </div>
+      `;
+      first = false;
+    });
+
+    // Actualizar los contenedores
+    const contenedorSec4 = document.getElementById("comentarios-lista-section4");
+    const contenedorSec5 = document.getElementById("comentarios-lista-section5");
+    const carouselInner = document.querySelector("#carouselComentarios .carousel-inner");
+
+    if (contenedorSec4) contenedorSec4.innerHTML = htmlDesktopSection4; // Solo en desktop
+    if (contenedorSec5) contenedorSec5.innerHTML = htmlDesktopSection5; // Solo en desktop
+    if (carouselInner) carouselInner.innerHTML = htmlMobile; // Solo en mobile
+  });
+}
+*/ 
+/* MODIFICACION DE LA FUNCION SUBMIT COMENTARIO PARA CAPTAR EL TIMESTAMP
+async function submitComentario(nombre, comentario) {
+  try {
+    await addDoc(comentariosCollection, {
+      nombre: nombre,
+      comentario: comentario,
+      timestamp: Date.now()
+    });
+    console.log("Comentario agregado");
+  } catch (error) {
+    console.error("Error al agregar comentario:", error);
+  }
+}
+*/ 
+
+/* modificacin submutcomentario por error en la consola
+async function submitComentario(nombre, comentario) {
+  try {
+    await addDoc(comentariosCollection, {
+      nombre: nombre,
+      comentario: comentario,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp() // Usa serverTimestamp
+    });
+    console.log("Comentario agregado");
+  } catch (error) {
+    console.error("Error al agregar comentario:", error);
+  }
+}
+*/
+
+
+// Formulario versión Mobile
+/*
+const formMobile = document.getElementById("form-comentario-mobile");
+if (formMobile) {
+  formMobile.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById("nombre-apellido-huesped-mobile").value;
+    const comentario = document.getElementById("comentario-huesped-mobile").value;
+    const alertContainer = document.getElementById("alert-comentario-mobile");
+    if (nombre.trim() === "" || comentario.trim() === "") {
+      showAlert("Por favor, complete todos los campos", "danger", formMobile);
+      return;
+    }
+    submitComentario(nombre, comentario)
+      .then(() => {
+        showAlert("Comentario agregado con éxito", "success", formMobile);
+        formMobile.reset();
+      })
+      .catch((error) => {
+        showAlert("Error al agregar comentario. Inténtalo nuevamente", "danger", formMobile);
+        console.error("Error al agregar comentario:", error);
+      });
+  });
+}
+/*
+
+
+
+/*
+//! Comentarios Section 4/5 con Firebase
+// Inicialización de Firebase y Firestore
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC7dhE0OF2Y_cSiNVp2aRCovQDJDHB-UMM",
+  authDomain: "casita-anem.firebaseapp.com",
+  projectId: "casita-anem",
+  storageBucket: "casita-anem.firebasestorage.app",
+  messagingSenderId: "494050866177",
+  appId: "1:494050866177:web:3805efbb7e75624e48bc00",
+  measurementId: "G-N9BCM46VN5"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Definimos la colección en la que se almacenarán los comentarios
+const comentariosCollection = collection(db, "comentarios");
+
+//! Mostrar alerta de envio de comentario formulario section 5
+function showAlert(message, type, container) {
+  const alertDiv = document.createElement('div');
+  alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+  alertDiv.role = 'alert';
+  alertDiv.innerHTML = `
+    ${message}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  `;
+  container.prepend(alertDiv);
+  setTimeout(() => {
+    alertDiv.classList.remove('show');
+    alertDiv.classList.add('hide');
+    setTimeout(() => alertDiv.remove(), 500);
+  }, 3000);
+}
+
+
+//funcion loadcomentarios
+function loadComentarios() {
+  onSnapshot(comentariosCollection, (snapshot) => {
+    let htmlDesktopSection4 = ""; 
+    let htmlDesktopSection5 = ""; 
+    let htmlMobile = ""; 
+    let first = true; 
+
+    // Convertir los comentarios a un array
+    const comentarios = [];
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      comentarios.push({
+        nombre: data.nombre,
+        comentario: data.comentario,
+        timestamp: data.timestamp 
+      });
+    });
+
+    // Ordenar los comentarios por nombre (alfabéticamente)
+    comentarios.sort((a, b) => {
+      const nombreA = a.nombre.toUpperCase(); 
+      const nombreB = b.nombre.toUpperCase();
+      if (nombreA < nombreB) return -1; 
+      if (nombreA > nombreB) return 1; 
+      return 0; 
+    });
+
+    // Obtener los últimos 3 comentarios (alfabéticamente)
+    const ultimosComentarios = comentarios.slice(0, 3); 
+    ultimosComentarios.forEach((data) => {
+     
+      htmlDesktopSection4 += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+    });
+
+  
+    const restoComentarios = comentarios.slice(3); 
+    restoComentarios.forEach((data) => {
+
+      htmlDesktopSection5 += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+    });
+
+ 
+    comentarios.forEach((data) => {
+      htmlMobile += `
+        <div class="carousel-item ${first ? "active" : ""}">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </div>
+      `;
+      first = false;
+    });
+
+    // Actualizar los contenedores
+    const contenedorSec4 = document.getElementById("comentarios-lista-section4");
+    const contenedorSec5 = document.getElementById("comentarios-lista-section5");
+    const carouselInner = document.querySelector("#carouselComentarios .carousel-inner");
+
+    if (contenedorSec4) contenedorSec4.innerHTML = htmlDesktopSection4; 
+    if (contenedorSec5) contenedorSec5.innerHTML = htmlDesktopSection5; 
+    if (carouselInner) carouselInner.innerHTML = htmlMobile; 
+  });
+}
+
+
+// Llamamos a la función para empezar a escuchar los cambios
+loadComentarios();
+
+// Función para enviar un comentario a Firestore
+async function submitComentario(nombre, comentario) {
+  try {
+    await addDoc(comentariosCollection, {
+      nombre: nombre,
+      comentario: comentario,
+      timestamp: serverTimestamp()
+    });
+    console.log("Comentario agregado");
+  } catch (error) {
+    console.error("Error al agregar comentario:", error);
+  }
+}
+
+// Agregar listener al formulario de desktop
+
+const formDesktop = document.getElementById("form-comentario-desktop");
+if (formDesktop) {
+  formDesktop.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById("nombre-apellido-huesped-desktop").value;
+    const comentario = document.getElementById("comentario-huesped-desktop").value;
+    submitComentario(nombre, comentario);
+    formDesktop.reset();
+  });
+}
+
+// Agregar listener al formulario de mobile
+const formMobile = document.getElementById("form-comentario-mobile");
+if (formMobile) {
+  formMobile.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById("nombre-apellido-huesped-mobile").value;
+    const comentario = document.getElementById("comentario-huesped-mobile").value;
+    submitComentario(nombre, comentario);
+    formMobile.reset();
+  });
+}
+
+*/

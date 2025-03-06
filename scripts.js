@@ -1,27 +1,4 @@
-/*
-document.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.getElementById("navbar");
-    const header = document.getElementById("header-anem");
-    const headerHeight = header.offsetHeight;
 
-    // Función para actualizar la visibilidad del navbar
-    const updateNavbarVisibility = () => {
-        const scrollPosition = window.scrollY;
-
-        if (scrollPosition >= headerHeight) {
-            navbar.classList.remove("navbar-hidden"); // Mostrar el navbar
-        } else {
-            navbar.classList.add("navbar-hidden"); // Ocultar el navbar
-        }
-    };
-
-    // Actualizar navbar inmediatamente al cargar la página
-    updateNavbarVisibility();
-
-    // Escuchar el evento scroll para seguir actualizando la visibilidad
-    window.addEventListener("scroll", updateNavbarVisibility);
-});
-*/
 
 /////TODO: - El código del navbar podría simplificarse usando `IntersectionObserver` en lugar de calcular manualmente las posiciones.
 
@@ -65,32 +42,7 @@ document.querySelectorAll('#navbarNavAltMarkup .nav-link').forEach(link => {
     });
   });
 
-/*
-document.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.getElementById("navbar");
-    const sections = document.querySelectorAll("section"); // Todas las secciones
 
-    const updateNavbarVisibility = () => {
-        let navbarVisible = false;
-
-        sections.forEach((section) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                navbarVisible = true;
-            }
-        });
-
-        if (navbarVisible) {
-            navbar.classList.remove("navbar-hidden"); // Mostrar navbar
-        } else {
-            navbar.classList.add("navbar-hidden"); // Ocultar navbar
-        }
-    };
-
-    window.addEventListener("scroll", updateNavbarVisibility);
-    updateNavbarVisibility(); // Ejecutar al inicio
-});
-*/
 
 //! Modal Section 2 desktop
 document.addEventListener("DOMContentLoaded", function () {
@@ -103,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
       img.addEventListener("click", function () {
         modalImage.src = this.src;
         modalTitle.textContent = this.alt;
-        // Mostrar el modal usando Bootstrap
         new bootstrap.Modal(modalEl).show();
       });
     });
@@ -159,10 +110,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//! Comentarios Section 4/5 con Firebase
-// Inicialización de Firebase y Firestore
+
+//! Inicialización de Firebase
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+import { 
+  getFirestore, 
+  collection, 
+  addDoc, 
+  onSnapshot, 
+  serverTimestamp 
+} from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC7dhE0OF2Y_cSiNVp2aRCovQDJDHB-UMM",
@@ -179,17 +137,62 @@ const db = getFirestore(app);
 
 // Definimos la colección en la que se almacenarán los comentarios
 const comentariosCollection = collection(db, "comentarios");
+
+
+//! Funciones Auxiliares. section 5
+
+// Función para mostrar alertas usando Bootstrap
+function showAlert(message, type, container) {
+  const alertDiv = document.createElement('div');
+  alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+  alertDiv.role = 'alert';
+  alertDiv.innerHTML = `
+    ${message}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  `;
+  container.prepend(alertDiv);
+  setTimeout(() => {
+    alertDiv.classList.remove('show');
+    alertDiv.classList.add('hide');
+    setTimeout(() => alertDiv.remove(), 500);
+  }, 3000);
+}
+
+
+//! Funciones de Lógica de la web
+
+// Función para cargar comentarios y actualizar los contenedores en tiempo real
 function loadComentarios() {
   onSnapshot(comentariosCollection, (snapshot) => {
-    let htmlDesktop = "";
-    let htmlMobile = "";
-    let first = true; // para marcar el primer slide como activo
+    let htmlDesktopSection4 = ""; // Para los primeros 3 comentarios (sección 4)
+    let htmlDesktopSection5 = ""; // Para el resto de los comentarios (sección 5)
+    let htmlMobile = ""; // Para el carrusel móvil
+    let first = true; // Para marcar el primer slide como activo
 
+    // Convertir el snapshot a un array
+    const comentarios = [];
     snapshot.forEach(doc => {
       const data = doc.data();
+      comentarios.push({
+        nombre: data.nombre,
+        comentario: data.comentario,
+        timestamp: data.timestamp
+      });
+    });
 
-      // Generamos HTML para la versión desktop (lista)
-      htmlDesktop += `
+    // Ordenar los comentarios alfabéticamente según el nombre
+    comentarios.sort((a, b) => {
+      const nombreA = a.nombre.toUpperCase();
+      const nombreB = b.nombre.toUpperCase();
+      if (nombreA < nombreB) return -1;
+      if (nombreA > nombreB) return 1;
+      return 0;
+    });
+
+    // Obtener los primeros 3 comentarios para la sección 4
+    const ultimosComentarios = comentarios.slice(0, 3);
+    ultimosComentarios.forEach((data) => {
+      htmlDesktopSection4 += `
         <li class="mb-3">
           <div class="card p-3">
             <strong>${data.nombre}</strong>
@@ -197,8 +200,23 @@ function loadComentarios() {
           </div>
         </li>
       `;
+    });
 
-      // Generamos HTML para la versión mobile (carrusel)
+    // El resto de los comentarios para la sección 5
+    const restoComentarios = comentarios.slice(3);
+    restoComentarios.forEach((data) => {
+      htmlDesktopSection5 += `
+        <li class="mb-3">
+          <div class="card p-3">
+            <strong>${data.nombre}</strong>
+            <p>${data.comentario}</p>
+          </div>
+        </li>
+      `;
+    });
+
+    // Para la versión móvil (carrusel), se muestran todos los comentarios
+    comentarios.forEach((data) => {
       htmlMobile += `
         <div class="carousel-item ${first ? "active" : ""}">
           <div class="card p-3">
@@ -210,48 +228,16 @@ function loadComentarios() {
       first = false;
     });
 
-    // Actualizamos los contenedores desktop
+    // Actualizar los contenedores de la UI
     const contenedorSec4 = document.getElementById("comentarios-lista-section4");
     const contenedorSec5 = document.getElementById("comentarios-lista-section5");
-    if (contenedorSec4) contenedorSec4.innerHTML = htmlDesktop;
-    if (contenedorSec5) contenedorSec5.innerHTML = htmlDesktop;
-
-    // Actualizamos el carrusel en mobile
     const carouselInner = document.querySelector("#carouselComentarios .carousel-inner");
-    if (carouselInner) {
-      carouselInner.innerHTML = htmlMobile;
-      // Si es necesario, podrías reinicializar el carrusel o forzar la actualización,
-      // pero en muchos casos solo actualizar el innerHTML es suficiente.
-    }
+
+    if (contenedorSec4) contenedorSec4.innerHTML = htmlDesktopSection4;
+    if (contenedorSec5) contenedorSec5.innerHTML = htmlDesktopSection5;
+    if (carouselInner) carouselInner.innerHTML = htmlMobile;
   });
 }
-
-/* // Función para actualizar los comentarios en ambas secciones - MODIFICACION PARA VERSION MOBILE
-function loadComentarios() {
-  onSnapshot(comentariosCollection, (snapshot) => {
-    let html = "";
-    snapshot.forEach(doc => {
-      const data = doc.data();
-      html += `
-        <li class="mb-3">
-          <div class="card p-3">
-            <strong>${data.nombre}</strong>
-            <p>${data.comentario}</p>
-          </div>
-        </li>
-      `;
-    });
-    // Actualizamos los contenedores de comentarios en sección 4 y 5
-    const contenedorSec4 = document.getElementById("comentarios-lista-section4");
-    const contenedorSec5 = document.getElementById("comentarios-lista-section5");
-    if (contenedorSec4) contenedorSec4.innerHTML = html;
-    if (contenedorSec5) contenedorSec5.innerHTML = html;
-  });
-}
-*/ 
-
-
-// Llamamos a la función para empezar a escuchar los cambios
 loadComentarios();
 
 // Función para enviar un comentario a Firestore
@@ -260,7 +246,7 @@ async function submitComentario(nombre, comentario) {
     await addDoc(comentariosCollection, {
       nombre: nombre,
       comentario: comentario,
-      timestamp: Date.now()
+      timestamp: serverTimestamp()
     });
     console.log("Comentario agregado");
   } catch (error) {
@@ -268,26 +254,59 @@ async function submitComentario(nombre, comentario) {
   }
 }
 
-// Agregar listener al formulario de desktop
+// ============================
+// ! Event Listeners para Formularios section 5
+// ============================
+
+// Formulario versión Desktop
 const formDesktop = document.getElementById("form-comentario-desktop");
 if (formDesktop) {
   formDesktop.addEventListener("submit", (e) => {
     e.preventDefault();
     const nombre = document.getElementById("nombre-apellido-huesped-desktop").value;
     const comentario = document.getElementById("comentario-huesped-desktop").value;
-    submitComentario(nombre, comentario);
-    formDesktop.reset();
+    // Validación de campos vacíos
+    if (nombre.trim() === "" || comentario.trim() === "") {
+      const alertContainer = document.getElementById("alert-comentario-desktop") || formDesktop;
+      showAlert("Por favor, complete todos los campos", "danger", alertContainer);
+      return;
+    }
+    submitComentario(nombre, comentario)
+      .then(() => {
+        const alertContainer = document.getElementById("alert-comentario-desktop") || formDesktop;
+        showAlert("Comentario agregado con éxito", "success", alertContainer);
+        formDesktop.reset();
+      })
+      .catch((error) => {
+        const alertContainer = document.getElementById("alert-comentario-desktop") || formDesktop;
+        showAlert("Error al agregar comentario. Inténtalo nuevamente", "danger", alertContainer);
+        console.error("Error al agregar comentario:", error);
+      });
   });
 }
 
-// Agregar listener al formulario de mobile (si lo usas)
+// Formulario versión Mobile
 const formMobile = document.getElementById("form-comentario-mobile");
 if (formMobile) {
   formMobile.addEventListener("submit", (e) => {
     e.preventDefault();
     const nombre = document.getElementById("nombre-apellido-huesped-mobile").value;
     const comentario = document.getElementById("comentario-huesped-mobile").value;
-    submitComentario(nombre, comentario);
-    formMobile.reset();
+    const alertContainer = document.getElementById("alert-comentario-mobile"); // Aquí tomamos el div de alertas correcto
+
+    if (nombre.trim() === "" || comentario.trim() === "") {
+      showAlert("Por favor, complete todos los campos", "danger", alertContainer); // Usamos alertContainer
+      return;
+    }
+
+    submitComentario(nombre, comentario)
+      .then(() => {
+        showAlert("Comentario agregado con éxito", "success", alertContainer); // Usamos alertContainer
+        formMobile.reset();
+      })
+      .catch((error) => {
+        showAlert("Error al agregar comentario. Inténtalo nuevamente", "danger", alertContainer);
+        console.error("Error al agregar comentario:", error);
+      });
   });
 }
