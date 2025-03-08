@@ -194,8 +194,8 @@ function loadComentarios() {
     ultimosComentarios.forEach((data) => {
       htmlDesktopSection4 += `
         <li class="mb-3">
-          <div class="card p-3">
-            <strong>${data.nombre}</strong>
+          <div class="comentario-card playfair-display"> 
+            <strong class="playfair-display-title">${data.nombre}</strong>
             <p>${data.comentario}</p>
           </div>
         </li>
@@ -207,8 +207,8 @@ function loadComentarios() {
     restoComentarios.forEach((data) => {
       htmlDesktopSection5 += `
         <li class="mb-3">
-          <div class="card p-3">
-            <strong>${data.nombre}</strong>
+         <div class="comentario-card playfair-display">  
+            <strong class="playfair-display-title">${data.nombre}</strong>
             <p>${data.comentario}</p>
           </div>
         </li>
@@ -219,8 +219,8 @@ function loadComentarios() {
     comentarios.forEach((data) => {
       htmlMobile += `
         <div class="carousel-item ${first ? "active" : ""}">
-          <div class="card p-3">
-            <strong>${data.nombre}</strong>
+         <div class="comentario-card playfair-display">  
+            <strong class="playfair-display-title">${data.nombre}</strong>
             <p>${data.comentario}</p>
           </div>
         </div>

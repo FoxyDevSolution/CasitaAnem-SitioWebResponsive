@@ -424,15 +424,75 @@ p.p-s1-mobile {
         }
   /**Estilo p section 4*/
         section.s4-sobre-nosotros p{
-          font-size: 1.5rem;
+          font-size: 1.4rem;
         }
 
+  /**Estilos de las cards de comentarios*/
+  .comentario-card {
+    background-color: transparent; 
+    border: 1px solid rgba(128, 128, 128, 0.5); 
+    border-radius: 8px; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
+    padding: 1rem;
+    margin-bottom: 1rem; 
+  }
+
+  div.comentario-card p {
+    font-size: 1.2rem;
+  }
+
+  div.comentario-card strong{
+    font-size: 1.5rem;
+  }
+
+
                                 /*? Section 5: Experiencias Huespedes*/
+
+    /**Background section 5*/
+        /*! background mobile*/
+        section.s5-exp-huespedes {
+
+          background-image: url("../assets/images/bgmobile1.webp");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          min-height: 100vh; 
+          display: flex;
+          flex-direction: column; 
+          justify-content: center; 
+          align-items: center; 
+          text-align: center; 
+        }
+  
+         /*! background desktop*/
+         @media (min-width: 768px) {
+          section.s5-exp-huespedes {
+            background-image: url("../assets/images/bgdesktop1.webp");
+          }
+        }
+
+    /**h2 section 5*/
+      /*!h2 section 1 - version mobile*/
+        section h2.h2-s5 {
+          font-size: 2.5rem;
+          margin-top: 30px;
+          color: #55312c;
+        }
+
+    /**Labels de los formularios section 5*/
+    form label.form-com {
+      font-size: 1.1rem !important;
+    }
+    
+    section h3.h3-s5 {
+      font-size: 1.7rem;
+    }
+
 
   /**Scroll y altura comentarios section 5 desktop*/
        @media (min-width: 768px) {
         #comentarios-lista-section5 {
-        max-height: 500px;
+        max-height: 450px;
         overflow-y: auto;
         padding-right: 10px; 
       }

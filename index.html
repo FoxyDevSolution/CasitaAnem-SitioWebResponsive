@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <!--TODO: hacer un boton que suba hacia arriba de toda la pag? quizas abajo a a la derecha-->
+<!--TODO: Hay cosas de los titulos en cuanto a tamaños y estilos que estan distintos, debería reveer para sostener una armonía-->
+
 <!--///TODO: Revisar rutas de las imagenes, algunas estan usando rutas que van a la raiz del servidor, mejor usar rutas relativas -->
 <!--///TODO: Herramientas como ImageOptim o Squoosh para mejorar el tiempo de carga? -->
 <!--///TODO: `description` y `keywords` para mejorar el posicionamiento en buscadores-->
@@ -144,6 +146,7 @@
 
   <!--* Section 2: Nuestra Casa -->
   <!--TODO: ver el background del fondo desktop, hay mucha diferencia entre la section 1 y la 2 --> 
+  <!--TODO: Cambiar el cursor en las fotos para que sea más intuitivo el clickear para acceder al modal--> 
   <!--///TODO: Ver margin o padding del h1 section 2-->
   <!--///TODO: En el modal hay que asegurarse de que todas las imágenes tengan la clase `clickable-img` para que funcionen correctamente. -->
   <section class="bg-light py-5 s2-rincon-patagonico" id="nuestra-casa">
@@ -220,6 +223,7 @@
   </section>
   
 <!--* Section 3: Dónde estamos -->
+ <!--TODO: Cambiar el cursor en el li para que sea más intuitivo el clickear en las rutas cargadas en el mapa --> 
   <section class="py-5 s3-donde-estamos" id="donde-estamos">
     <div class="container text-center">
       <h2 class="text-center mb-4 playfair-display-title">¿Dónde estamos?</h2>
@@ -243,7 +247,7 @@
   </section>
 
   <!--* Section 4: Sobre nosotros -->
-  <!--TODO: Terminar de ver el CSS de las cards de comentarios-->
+  <!--TODO: En la version mobile hay un espacio en el top antes del h2 que no me gusta, debería revisar-->
   <section class="bg-light py-5 s4-sobre-nosotros" id="sobre-nosotros">
     <div class="container">
       <h2 class="text-center mb-4 playfair-display-title">Sobre nosotros</h2>
@@ -257,14 +261,14 @@
         </p>
   
       <!--* Botón para móvil que enlaza a la sección 5 -->
-      <div class="text-center d-md-none mt-4">
+      <div class="text-center d-md-none mt-3">
         <a href="#experiencias-huespedes" class="btn btn-primary">Conoce experiencias de huéspedes</a>
       </div>
   
       <!--! Versión Desktop -->
-      <div class="row d-none d-md-flex mt-4">
+      <div class="row d-none d-md-flex mt-2">
         <div class="col-md-12 text-center">
-          <p>Aquí le compartimos algunas reseñas:</p>
+          <p class="playfair-display">Aquí le compartimos algunas reseñas:</p>
         </div>
   
         <!--! Reseñas -->
@@ -273,7 +277,7 @@
         </div>
 
         <!--? Botón para dejar opinión -->
-        <div class="text-center mt-4">
+        <div class="text-center">
           <a href="#experiencias-huespedes" class="btn btn-primary">Conoce experiencias de huéspedes</a>
         </div>
       </div>
@@ -282,9 +286,11 @@
 
 
  <!--* Section 5: Experiencias huespedes -->
- <section class="bg-light py-5" id="experiencias-huespedes">
+ <!--TODO: El carrousel con los mensajes hace que se mueva el h2, quizas debería ajustar la altura? -->
+ <!--TODO: Las flechas del carrousel tapan algunas letras de los comentarios, debería revisar-->
+ <section class="bg-light py-5 s5-exp-huespedes" id="experiencias-huespedes">
   <div class="container">
-    <h2 class="text-center mb-4">Experiencias de nuestros visitantes</h2>
+    <h2 class="text-center mb-4 playfair-display-title h2-s5">Experiencias de nuestros visitantes</h2>
 
     <!--! Versión móvil: Carrusel de comentarios -->
     <div id="carouselComentarios" class="carousel slide d-md-none mb-4" data-bs-ride="carousel">
@@ -317,17 +323,17 @@
 
     <!-- Formulario para versión móvil -->
     <div class="d-md-none">
-      <h3>Dejanos tu experiencia</h3>
+      <h3 class="playfair-display h3-s5">Dejanos tu experiencia</h3>
       <form id="form-comentario-mobile">
         <!-- Campo para nombre y apellido -->
         <div class="mb-3">
-          <label for="nombre-apellido-huesped-mobile" class="form-label">Nombre y Apellido</label>
+          <label for="nombre-apellido-huesped-mobile" class="form-label playfair-display form-com">Nombre y Apellido</label>
           <input type="text" class="form-control" id="nombre-apellido-huesped-mobile" required placeholder="Tu nombre">
         </div>
 
         <!-- Campo para el comentario -->
         <div class="mb-3">
-          <label for="comentario-huesped-mobile" class="form-label">Contanos tu experiencia!</label>
+          <label for="comentario-huesped-mobile" class="form-label playfair-display form-com">Contanos tu experiencia!</label>
           <textarea class="form-control" id="comentario-huesped-mobile" rows="3" required placeholder="Escribe tu comentario aquí"></textarea>
         </div>
         <!-- Div. de alerta de envio de comentarios -->
@@ -343,17 +349,17 @@
     <div class="row d-none d-md-flex">
       <!-- Columna izquierda: Formulario -->
       <div class="col-md-6">
-        <h3>Dejanos tu experiencia</h3>
+        <h3 class="playfair-display h3-s5">Dejanos tu experiencia</h3>
         <form id="form-comentario-desktop">
           <!-- Campo para nombre y apellido -->
           <div class="mb-3">
-            <label for="nombre-apellido-huesped-desktop" class="form-label">Nombre y Apellido</label>
+            <label for="nombre-apellido-huesped-desktop" class="form-label playfair-display form-com">Nombre y Apellido</label>
             <input type="text" class="form-control" id="nombre-apellido-huesped-desktop" required placeholder="Tu nombre">
           </div>
 
           <!-- Campo para el comentario -->
           <div class="mb-3">
-            <label for="comentario-huesped-desktop" class="form-label">Contanos tu experiencia!</label>
+            <label for="comentario-huesped-desktop" class="form-label playfair-display form-com">Contanos tu experiencia!</label>
             <textarea class="form-control" id="comentario-huesped-desktop" rows="3" required placeholder="Escribe tu comentario aquí"></textarea>
           </div>
            <!-- Div. de alerta de envio de comentarios -->
