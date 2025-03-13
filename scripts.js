@@ -2,9 +2,9 @@
 
 /////TODO: - El código del navbar podría simplificarse usando `IntersectionObserver` en lugar de calcular manualmente las posiciones.
 
-
+// ============================
 //!Navbar 
-
+// ============================
 const header = document.getElementById('header-anem');
 const navbar = document.getElementById('navbar');
 
@@ -43,8 +43,9 @@ document.querySelectorAll('#navbarNavAltMarkup .nav-link').forEach(link => {
   });
 
 
-
+// ============================
 //! Modal Section 2 desktop
+// ============================
 document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(".clickable-img");
     const modalImage = document.getElementById("modalImage");
@@ -60,8 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-
+// ============================
 //! Mapa Section 3 con Leaflet
+// ============================
 document.addEventListener("DOMContentLoaded", () => {
   const casitaAnem = [-41.074722, -71.152583];
 
@@ -110,9 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
+// ============================
 //! Inicialización de Firebase
-
+// ============================
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
 import { 
   getFirestore, 
@@ -138,9 +140,9 @@ const db = getFirestore(app);
 // Definimos la colección en la que se almacenarán los comentarios
 const comentariosCollection = collection(db, "comentarios");
 
-
+// ============================
 //! Funciones Auxiliares. section 5
-
+// ============================
 // Función para mostrar alertas usando Bootstrap
 function showAlert(message, type, container) {
   const alertDiv = document.createElement('div');
@@ -158,9 +160,9 @@ function showAlert(message, type, container) {
   }, 3000);
 }
 
-
+// ============================
 //! Funciones de Lógica de la web
-
+// ============================
 // Función para cargar comentarios y actualizar los contenedores en tiempo real
 function loadComentarios() {
   onSnapshot(comentariosCollection, (snapshot) => {
@@ -310,3 +312,60 @@ if (formMobile) {
       });
   });
 }
+
+
+// ============================
+// ! SECTION 6 - LOGICA DE ENVIO DE MENSAJES
+// ============================
+document.addEventListener("DOMContentLoaded", function () {
+  emailjs.init("Yjydhs8p7JTZ5XEPC"); // Reemplaza con tu Public Key
+
+  const form = document.getElementById("contacto-form");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Evita el envío predeterminado
+
+    // Obtener los valores del formulario
+    const nombre = document.querySelector('input[name="nombre"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const telefono = document.querySelector('input[name="telefono"]').value;
+    const mensaje = document.querySelector('textarea[name="mensaje"]').value;
+    const metodoEnvio = document.getElementById("metodo-envio").value;
+
+    if (metodoEnvio === "email") {
+      enviarPorEmail(nombre, email, telefono, mensaje);
+    } else if (metodoEnvio === "whatsapp") {
+      enviarPorWhatsApp(nombre, email, telefono, mensaje);
+    }
+  });
+
+  function enviarPorEmail(nombre, email, telefono, mensaje) {
+    const parametros = {
+      nombre,
+      email,
+      telefono: telefono || "No especificado",
+      mensaje,
+    };
+
+    emailjs.send("service_x3snivm", "template_825vhng", parametros) // Corregido el Template ID
+      .then(() => {
+        alert("Consulta enviada por email");
+        form.reset(); // Limpiar formulario después de enviar
+      })
+      .catch(error => console.error("Error:", error));
+  }
+
+  function enviarPorWhatsApp(nombre, email, telefono, mensaje) {
+    const numeroWhatsApp = "+542944326686"; // Reemplazar con tu número
+
+    const textoMensaje = `Hola! Soy ${nombre} y me gustaría hacer una consulta sobre Casita Anem.%0A
+      📧 Email: ${email}%0A
+      📞 Teléfono: ${telefono || "No especificado"}%0A
+      ✉️ Mensaje: ${mensaje}`;
+
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${textoMensaje}`;
+
+    window.open(urlWhatsApp, "_blank");
+  }
+});
+

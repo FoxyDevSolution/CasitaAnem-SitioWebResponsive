@@ -498,3 +498,62 @@ p.p-s1-mobile {
       }
   }
   
+
+                                /*? Section 6: Contacto y reservas*/
+
+    /**Background section 6*/
+        /*! background mobile*/
+        section.s6-contacto {
+
+          background-image: url("../assets/images/bgmobile2.webp");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          min-height: 100vh; 
+          display: flex;
+          flex-direction: column; 
+          justify-content: center; 
+          align-items: center; 
+          text-align: center; 
+        }
+  
+         /*! background desktop*/
+         @media (min-width: 768px) {
+          section.s6-contacto {
+            background-image: url("../assets/images/bgdesktop2.webp");
+          }
+        }
+
+           /**h2 section 6*/
+      section h2.h2-s6 {
+        font-size: 2.5rem;
+        margin-top: 30px;
+        color: #55312c;
+      }
+
+      /* Quitar los puntos de los li y personalizar los enlaces */
+      .enlaces-contacto {
+       list-style-type: none; /* Quita los puntos de la lista */
+       padding-left: 0; /* Elimina el espacio de la izquierda */
+      }
+
+      .enlaces-contacto li {
+       margin-bottom: 10px; /* Espacio entre los elementos */
+      }
+
+      .enlaces-contacto a {
+        text-decoration: none; /* Quita el subrayado */
+        color: #333; /* Color personalizado para los enlaces */
+        font-size: 18px; /* Tamaño del texto */
+        display: flex; /* Para alinear los iconos y el texto */
+        align-items: center; /* Centra el icono y el texto verticalmente */
+}
+
+      .enlaces-contacto a:hover {
+       color: #007bff; /* Color al pasar el mouse (puedes personalizarlo) */
+      }
+
+      .enlaces-contacto a i {
+        margin-right: 8px; /* Espacio entre el icono y el texto */
+        font-size: 20px; /* Tamaño del icono */
+      }
