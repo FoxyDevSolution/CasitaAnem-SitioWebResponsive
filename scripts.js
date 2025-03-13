@@ -1,7 +1,5 @@
 
 
-/////TODO: - El código del navbar podría simplificarse usando `IntersectionObserver` en lugar de calcular manualmente las posiciones.
-
 // ============================
 //!Navbar 
 // ============================
@@ -356,7 +354,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function enviarPorWhatsApp(nombre, email, telefono, mensaje) {
-    const numeroWhatsApp = "+542944326686"; // Reemplazar con tu número
+    const numeroWhatsApp = "+542944312416"; // Reemplazar con tu número
 
     const textoMensaje = `Hola! Soy ${nombre} y me gustaría hacer una consulta sobre Casita Anem.%0A
       📧 Email: ${email}%0A

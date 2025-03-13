@@ -23,14 +23,7 @@
   <!--!Link FontAwesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<!--TODO: hacer un boton que suba hacia arriba de toda la pag? quizas abajo a a la derecha-->
-<!--TODO: Hay cosas de los titulos en cuanto a tamaños y estilos que estan distintos, debería reveer para sostener una armonía-->
 
-<!--///TODO: Revisar rutas de las imagenes, algunas estan usando rutas que van a la raiz del servidor, mejor usar rutas relativas -->
-<!--///TODO: Herramientas como ImageOptim o Squoosh para mejorar el tiempo de carga? -->
-<!--///TODO: `description` y `keywords` para mejorar el posicionamiento en buscadores-->
-<!--///TODO: Mejorar el head y hacer atractivo el title-->
-<!--///TODO:  "Casita Anem - Alquiler Vacacional en Dina Huapi, Patagonia". no será mas descriptivo como titulo de la pag? -->
 <body>
   <!--* Header: Título, logo y el botón principal. -->
   <header class="text-center py-5 section-header" id="header-anem">
@@ -44,8 +37,7 @@
   </header>
 
   <!--*Navbar: Visible en las secciones 1 a 6 (no en el header)-->
-   <!--///TODO: los contrastes de color cumplan con WCAG?, especialmente en el navbar y botones.--> 
-  <!--///TODO: Una alternativa para el movimiento del navbar es usar `IntersectionObserver` para detectar cuando el header sale de la vista, seria más preciso?--> 
+ 
   <nav class="navbar navbar-expand-lg " id="navbar">  <!-- elimine la clase navbar-hidden -->
     <div class="container-fluid">
       <a class="navbar-brand" href="#header-anem">
@@ -68,10 +60,7 @@
   </nav>
 
   <!--* Section 1: Rincón Patagónico -->
-  <!--TODO: Sec1. Debería hacer un modal con las imagenes en el desktop? -->
-  <!--///TODO: sec1. Acomodar el margin o el padding de el h1 rincon patagonico-->
-  <!--///TODO: Sec1. Texto descriptivo del carrousel dice Fina Huapi x? -->
-  <!--///TODO: sec1. las imágenes en desktop usan `rounded-circle`, lo que las hace redondas, pero en mobile son rectangulares. Considerar mantener una forma consistente o justificar el cambio?-->
+ 
   <section id="rincon-patagonico" class="py-5 s1-rincon-patagonico">
     <div class="container text-center">
   
@@ -145,10 +134,7 @@
   </section>
 
   <!--* Section 2: Nuestra Casa -->
-  <!--TODO: ver el background del fondo desktop, hay mucha diferencia entre la section 1 y la 2 --> 
-  <!--TODO: Cambiar el cursor en las fotos para que sea más intuitivo el clickear para acceder al modal--> 
-  <!--///TODO: Ver margin o padding del h1 section 2-->
-  <!--///TODO: En el modal hay que asegurarse de que todas las imágenes tengan la clase `clickable-img` para que funcionen correctamente. -->
+
   <section class="bg-light py-5 s2-rincon-patagonico" id="nuestra-casa">
     <div class="container">
       <h2 class="text-center mb-4 playfair-display-title">Nuestra Casa</h2>
@@ -223,7 +209,7 @@
   </section>
   
 <!--* Section 3: Dónde estamos -->
- <!--TODO: Cambiar el cursor en el li para que sea más intuitivo el clickear en las rutas cargadas en el mapa --> 
+
   <section class="py-5 s3-donde-estamos" id="donde-estamos">
     <div class="container text-center">
       <h2 class="text-center mb-4 playfair-display-title">¿Dónde estamos?</h2>
@@ -247,7 +233,7 @@
   </section>
 
   <!--* Section 4: Sobre nosotros -->
-  <!--TODO: En la version mobile hay un espacio en el top antes del h2 que no me gusta, debería revisar-->
+ 
   <section class="bg-light py-5 s4-sobre-nosotros" id="sobre-nosotros">
     <div class="container">
       <h2 class="text-center mb-4 playfair-display-title">Sobre nosotros</h2>
@@ -286,8 +272,7 @@
 
 
  <!--* Section 5: Experiencias huespedes -->
- <!--TODO: El carrousel con los mensajes hace que se mueva el h2, quizas debería ajustar la altura? -->
- <!--TODO: Las flechas del carrousel tapan algunas letras de los comentarios, debería revisar-->
+ 
  <section class="bg-light py-5 s5-exp-huespedes" id="experiencias-huespedes">
   <div class="container">
     <h2 class="text-center mb-4 playfair-display-title h2-s5">Experiencias de nuestros visitantes</h2>
@@ -381,7 +366,7 @@
 
 
  <!--* Section 6: "Contacto y reservas" -->
-  <!--TODO: Agregar iconos y armar los enlaces de contacto-->
+
  <section class="bg-light py-5 s6-contacto" id="contacto-reservas">
   <div class="container">
     <h2 class="text-center playfair-display-title h2-s6">Contacto y reservas</h2>
@@ -419,41 +404,6 @@
 </form>
 
 
-
-  <!-- CAMBIO DE FORMULARIO PARA QUE EL CLIENTE DECIDA SI ENVIAR UN MAIL O UN WHATSAPP
-        <form action="/enviar-formulario" method="POST">
-
-         <!--? Nombre y apellido - formulario contacto
-          <div class="mb-3">
-        <label for="nombre-apellido-contacto" class="form-label">Nombre y Apellido</label>
-        <input type="text" class="form-control" id="nombre-apellido-contacto" required placeholder="Campo obligatorio">
-          </div>
-
-         <!--? Email - formulario contacto
-         <div class="mb-3">
-        <label for="email-contacto" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email-contacto" placeholder="name@example.com (Campo obligatorio) " required>
-         </div>
-
-         <!--? Teléfono (opcional)
-         <div class="mb-3">
-        <label for="telefono-contacto" class="form-label">Número de teléfono</label>
-        <input type="tel" class="form-control" id="telefono-contacto" placeholder="Tu número de teléfono (opcional)">
-         </div>
-
-         <!--? Consulta - formulario contacto
-         <div class="mb-3">
-        <label for="consulta-contacto" class="form-label">Dejanos tu consulta</label>
-        <textarea class="form-control" id="consulta-contacto" rows="3" placeholder="Escribe tu consulta aquí"></textarea>
-         </div>
-
-         <!--? Botón para enviar
-         <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Enviar</button>
-         </div>
-
-        </form>
-        -->
       </div>
 
       <!--? Enlaces de contacto-->
@@ -471,15 +421,12 @@
 
 
   <!--* Footer: sobre la pagina -->
-  <!--TODO: Armar mis redes sociales y el linktree-->
   <footer class="bg-dark text-light py-4">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
           <p>Sitio creado por: <strong>FoxyDev - Soluciones Software </strong></p>
-          <p><a href="mailto:tucorreo@example.com" class="text-light">contacto</a></p>
-          <p><a href="https://linktree.com" target="_blank" class="text-light">Visita mis redes sociales</a></p>
-          <p><a href="https://www.tuportafolio.com" target="_blank" class="text-light">Visita mis otros proyectos</a></p>
+          <p><a href="https://linktr.ee/FoxyDev.solution" target="_blank" class="text-light">Contactame!</a></p>
         </div>
       </div>
     </div>
@@ -526,24 +473,5 @@
 
     setInterval(rotarTitulo, 2500);
   </script>
-  <!--!Script Firebase para backend
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
-  
-    const firebaseConfig = {
-      apiKey: "AIzaSyC7dhE0OF2Y_cSiNVp2aRCovQDJDHB-UMM",
-      authDomain: "casita-anem.firebaseapp.com",
-      projectId: "casita-anem",
-      storageBucket: "casita-anem.firebasestorage.app",
-      messagingSenderId: "494050866177",
-      appId: "1:494050866177:web:3805efbb7e75624e48bc00",
-      measurementId: "G-N9BCM46VN5"
-    };
-  
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app); 
-  </script>
-  -->
 </body>
 </html>

@@ -1,6 +1,5 @@
 
-/*TODO: Hay algunas clases que no se están utilizando? Hay que eliminarlas
-/*TODO: Hay una linea blanca entre sections que se ve horrible.
+
                       /*? Sobreescritura box-sizing bootstrap*/
 .selector-for-some-widget {
     box-sizing: content-box;
@@ -153,7 +152,7 @@ header.section-header .btn-conocenos:hover {
   background-color: #7b4434; 
 }
 
-/*TODO NAVBAR: CHEQUEAR FONDO Y COLOR DE LA TRANSPARENCIA,SI NO SE PIERDE EN EL CONTENIDO*/
+
                              /*? Navbar style */
  #navbar {
    background-color: #d4907ca2;
