@@ -274,7 +274,7 @@ p.p-s1-mobile {
       /*! background mobile*/
       section.s2-rincon-patagonico {
 
-        background-image: url("/assets/images/bgmobile2.png");
+        background-image: url("../assets/images/bgmobile2.png");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
